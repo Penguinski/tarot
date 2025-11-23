@@ -167,6 +167,62 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* Contenitore flessibile delle carte */
+        .spread-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Lo slot della singola carta nel risultato */
+        .card-slot {
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 15px;
+            width: 100%;
+            max-width: 300px;
+            /* Larghezza massima per carta singola */
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Quando siamo in modalità 3 carte, le rimpiccioliamo un po' per farle stare */
+        .spread-mode-3 .card-slot {
+            max-width: 100%;
+            /* Su mobile vanno una sotto l'altra */
+        }
+
+        /* Etichetta della posizione (es. "Passato") */
+        .position-label {
+            color: #888;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-img-result {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            color: #d4af37;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .card-desc {
+            font-size: 0.9em;
+            line-height: 1.5;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -176,7 +232,7 @@
         <h1>TAROCCHI</h1>
         <p>Scegli il tuo metodo di lettura</p>
         <button onclick="goToInput('one-card')">🔮 Carta Singola</button>
-        <button onclick="alert('In arrivo presto!')" style="opacity: 0.5">⏳ 3 Carte (Passato/Presente/Futuro)</button>
+        <button onclick="goToInput('three-cards')">⏳ 3 Carte (Passato/Presente/Futuro)</button>
         <button onclick="alert('In arrivo presto!')" style="opacity: 0.5">✝️ Croce Celtica</button>
     </div>
 
@@ -216,18 +272,7 @@
     <div id="screen-result" class="screen">
         <div class="user-question-display" id="display-question">...</div>
 
-        <h2 id="res-card-name" style="color: #d4af37;">Nome Carta</h2>
-        <img id="res-card-img" class="card-img-result" src="" alt="Carta">
-
-        <div class="meaning-box">
-            <strong style="color: #d4af37; display:block; margin-bottom:5px;">Significato:</strong>
-            <span id="res-meaning">...</span>
-        </div>
-
-        <div class="meaning-box" style="border-left: 3px solid #d4af37;">
-            <strong style="color: #d4af37; display:block; margin-bottom:5px;">Spunto di riflessione:</strong>
-            <span id="res-reflection">...</span>
-        </div>
+        <div id="cards-container" class="spread-container"></div>
 
         <button onclick="goHome()" style="margin-top:30px;">Nuova Lettura</button>
     </div>

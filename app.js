@@ -52,23 +52,63 @@ function startShuffle() {
 
 // --- FASE 2: PESCARE E RIVELARE ---
 function revealCard() {
-    if (deck.length === 0) return;
+    if (deck.length < 3) return; // Sicurezza
 
-    // Pesca casuale
-    const r = Math.floor(Math.random() * deck.length);
-    const card = deck[r];
+    // 1. Prepara l'intestazione
+    const questionText = userQuestion ? `"${userQuestion}"` : "Lettura Intuitiva";
+    document.getElementById('display-question').innerText = `${questionText} (${userCategory})`;
 
-    // Popola i dati nella schermata finale
-    document.getElementById('display-question').innerText =
-        userQuestion ? `Domanda: "${userQuestion}" (${userCategory})` : `Lettura ${userCategory}`;
+    // 2. Pulisci il contenitore vecchio
+    const container = document.getElementById('cards-container');
+    container.innerHTML = ""; // Svuota tutto
+    container.className = "spread-container"; // Resetta classi
 
-    document.getElementById('res-card-name').innerText = card.name;
-    document.getElementById('res-card-img').src = card.image;
+    // 3. Logica in base al metodo scelto
+    let drawnCards = [];
 
-    // Qui in futuro potremo usare l'AI per personalizzare il testo in base alla domanda
-    // Per ora usiamo il significato standard
-    document.getElementById('res-meaning').innerText = card.modern_meaning;
-    document.getElementById('res-reflection').innerText = card.reflection;
+    // MESCOLA IL MAZZO (Shuffle algorithm)
+    // Creiamo una copia del mazzo e la mescoliamo per non rovinare l'originale
+    let shuffledDeck = [...deck].sort(() => 0.5 - Math.random());
+
+    if (currentSpread === 'one-card') {
+        // Pesca 1 carta
+        drawnCards = [{
+            data: shuffledDeck[0],
+            position: "Risposta"
+        }];
+
+    } else if (currentSpread === 'three-cards') { // ORA FUNZIONA!
+        // Aggiungi una classe CSS specifica per gestire lo stile a 3 colonne
+        container.classList.add('spread-mode-3');
+
+        // Pesca 3 carte
+        drawnCards = [
+            { data: shuffledDeck[0], position: "Passato / Origine" },
+            { data: shuffledDeck[1], position: "Presente / Azione" },
+            { data: shuffledDeck[2], position: "Futuro / Esito" }
+        ];
+    }
+
+    // 4. Genera l'HTML per ogni carta pescata
+    drawnCards.forEach(item => {
+        const card = item.data;
+
+        // Creiamo il blocco HTML per la carta
+        const cardHTML = `
+            <div class="card-slot">
+                <span class="position-label">${item.position}</span>
+                <h3 class="card-title">${card.name}</h3>
+                <img class="card-img-result" src="${card.image}" alt="${card.name}">
+                <div class="card-desc">
+                    <strong>Significato:</strong> ${card.modern_meaning}<br><br>
+                    <em style="color:#d4af37">Riflessione: ${card.reflection}</em>
+                </div>
+            </div>
+        `;
+
+        // Inseriamo il blocco nel contenitore
+        container.innerHTML += cardHTML;
+    });
 
     // Mostra risultato
     showScreen('screen-result');
