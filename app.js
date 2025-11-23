@@ -15,12 +15,21 @@ async function loadDeck() {
 }
 loadDeck();
 
+// Mescolamento Reale (Fisher-Yates)
+function shuffleDeck(array) {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+}
+
 // --- UI MANAGERS ---
 function selectCategory(btnElement, category) {
     userCategory = category;
-    // Rimuovi 'selected' da tutti i bottoni
     document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('selected'));
-    // Aggiungi a quello cliccato
     btnElement.classList.add('selected');
 }
 
@@ -32,24 +41,29 @@ function showScreen(id) {
 function goHome() { showScreen('screen-home'); }
 function goToInput(type) { currentSpread = type; showScreen('screen-input'); }
 
-// --- LOGICA LETTURA ---
+// --- LOGICA AVVIO E MESCOLA ---
 function startReading() {
     userQuestion = document.getElementById('user-question').value;
-    shuffledDeck = [...deck].sort(() => 0.5 - Math.random());
-    cardsDrawn = 0;
 
-    // Imposta quante carte servono
+    // 1. Mostra schermata di caricamento (Rito)
+    showScreen('screen-shuffle');
+
+    // 2. Dietro le quinte mescoliamo
+    shuffledDeck = shuffleDeck([...deck]);
+    cardsDrawn = 0;
     totalCardsNeeded = (currentSpread === 'three-cards') ? 3 : 1;
 
-    // Pulisci il carosello
     const container = document.getElementById('carousel-container');
     container.innerHTML = '';
 
-    // Aggiungi il primo elemento: IL MAZZO COPERTO
+    // Aggiungi il mazzo iniziale
     addDeckSlide(container);
 
-    showScreen('screen-reading');
-    updateStatus();
+    // 3. Aspetta 2 secondi e poi vai al tavolo
+    setTimeout(() => {
+        showScreen('screen-reading');
+        updateStatus();
+    }, 2000);
 }
 
 function updateStatus() {
@@ -59,10 +73,9 @@ function updateStatus() {
     document.getElementById('reading-step').innerText = text;
 }
 
-// Crea la slide con il mazzo coperto
 function addDeckSlide(container) {
     const div = document.createElement('div');
-    div.className = 'slide slide-active'; // Parte attivo
+    div.className = 'slide slide-active';
     div.id = 'deck-slide';
     div.innerHTML = `
         <div class="card-back-pattern" onclick="revealNextCard()">
@@ -71,30 +84,25 @@ function addDeckSlide(container) {
         <div style="margin-top:20px; color:#666; font-size:0.8rem">TOCCA PER PESCARE</div>
     `;
     container.appendChild(div);
-
-    // Scrolla subito su di lui
-    div.scrollIntoView({ behavior: "smooth", inline: "center" });
+    // Assicuriamoci che sia centrato all'avvio
+    setTimeout(() => div.scrollIntoView({ behavior: "auto", inline: "center" }), 100);
 }
 
-// Quando clicchi sul mazzo
 function revealNextCard() {
     if (cardsDrawn >= totalCardsNeeded) return;
 
     const container = document.getElementById('carousel-container');
-
-    // 1. Rimuovi il mazzo (o spostalo in fondo? Meglio sostituirlo per la UX clean)
-    // Se vuoi vedere la carta "uscire", aggiungiamo la carta DOPO il mazzo, e poi spostiamo il mazzo in fondo.
-
     const card = shuffledDeck[cardsDrawn];
+
     const positionNames = currentSpread === 'three-cards'
-        ? ["PASSATO", "PRESENTE", "FUTURO"]
-        : ["RISPOSTA"];
+        ? ["IL PASSATO", "IL PRESENTE", "IL FUTURO"]
+        : ["LA RISPOSTA"];
 
     // Crea la slide della carta
     const slide = document.createElement('div');
     slide.className = 'slide';
     slide.innerHTML = `
-        <div class="label" style="color:#666; margin-bottom:10px; font-size:0.8rem;">${positionNames[cardsDrawn]}</div>
+        <div class="label" style="color:#888; margin-bottom:10px; font-size:0.7rem;">${positionNames[cardsDrawn]}</div>
         <img class="card-visual" src="${card.image}" alt="${card.name}">
         <div class="meaning-content">
             <h3>${card.name}</h3>
@@ -103,37 +111,50 @@ function revealNextCard() {
         </div>
     `;
 
-    // Inserisci la carta PRIMA del mazzo (che è l'ultimo elemento)
+    // Inserisci la carta PRIMA del mazzo
     const deckSlide = document.getElementById('deck-slide');
     container.insertBefore(slide, deckSlide);
 
     cardsDrawn++;
     updateStatus();
 
-    // Focus sulla nuova carta
+    // FOCUS SULLA CARTA APPENA PESCATA
     slide.scrollIntoView({ behavior: "smooth", inline: "center" });
 
-    // Animazione di attivazione classe
+    // Gestione classi visuali
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('slide-active'));
     slide.classList.add('slide-active');
 
-    // Se abbiamo finito, nascondi il mazzo
-    if (cardsDrawn >= totalCardsNeeded) {
-        deckSlide.style.display = 'none';
+    // LOGICA HINT: Se ci sono ancora carte da pescare, mostra la freccia
+    if (cardsDrawn < totalCardsNeeded) {
+        showScrollHint();
+        // Togli focus visivo dal mazzo per invogliare a cercarlo
+        deckSlide.classList.remove('slide-active');
     } else {
-        // Se mancano carte, lascia il mazzo lì a destra, così l'utente scorre per pescare ancora
-        deckSlide.scrollIntoView({ behavior: "smooth", inline: "center" }); // Ops, no, rimaniamo sulla carta appena pescata per leggerla!
-
-        // Logica migliorata: Rimani sulla carta letta. L'utente vedrà "spuntare" il mazzo a destra e scorrerà quando è pronto.
-        setTimeout(() => {
-            // Piccolo trucco per evidenziare che c'è altro a destra
-            deckSlide.classList.remove('slide-active');
-        }, 100);
+        // Se abbiamo finito, nascondi il mazzo definitivamente
+        deckSlide.style.display = 'none';
+        hideScrollHint();
     }
 }
 
-// Gestione dell'effetto "Focus" durante lo scroll manuale
+// Funzioni per la freccia suggerimento
+function showScrollHint() {
+    const hint = document.getElementById('scroll-hint');
+    hint.style.display = 'block';
+    // Nascondila dopo 4 secondi per non disturbare
+    setTimeout(() => {
+        hint.style.display = 'none';
+    }, 4000);
+}
+
+function hideScrollHint() {
+    document.getElementById('scroll-hint').style.display = 'none';
+}
+
+// Gestione dell'effetto "Focus" e spegnimento hint allo scroll manuale
 document.getElementById('carousel-container').addEventListener('scroll', () => {
+    hideScrollHint(); // Se l'utente scorre, ha capito: via la freccia!
+
     const container = document.getElementById('carousel-container');
     const center = container.scrollLeft + (container.offsetWidth / 2);
 

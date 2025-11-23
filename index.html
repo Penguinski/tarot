@@ -31,7 +31,6 @@
             padding: 0;
             height: 100vh;
             overflow: hidden;
-            /* Niente scroll generale */
             display: flex;
             flex-direction: column;
         }
@@ -45,7 +44,6 @@
             letter-spacing: 2px;
         }
 
-        /* --- SCHERMATE --- */
         .screen {
             display: none;
             width: 100%;
@@ -53,7 +51,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            /* Centra tutto verticalmente */
             padding: 20px;
             box-sizing: border-box;
             animation: fadeIn 0.5s ease;
@@ -63,7 +60,7 @@
             display: flex;
         }
 
-        /* --- INPUT E CATEGORIE (NUOVO DESIGN) --- */
+        /* --- STILI INPUT (Come prima) --- */
         textarea {
             background: transparent;
             border: none;
@@ -78,11 +75,6 @@
             margin-bottom: 30px;
             outline: none;
             resize: none;
-        }
-
-        textarea::placeholder {
-            color: #444;
-            font-style: italic;
         }
 
         .category-grid {
@@ -100,13 +92,11 @@
             color: #666;
             padding: 20px 10px;
             border-radius: 4px;
-            /* Angoli poco smussati */
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s;
         }
 
-        /* Stato Selezionato */
         .cat-btn.selected {
             border-color: var(--gold);
             color: var(--gold);
@@ -114,7 +104,6 @@
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.1);
         }
 
-        /* Bottone Principale */
         .cta-btn {
             background: var(--gold);
             color: #000;
@@ -124,7 +113,6 @@
             font-weight: bold;
             cursor: pointer;
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-            /* Forma un po' obliqua */
             transition: transform 0.2s;
         }
 
@@ -132,55 +120,76 @@
             transform: scale(0.95);
         }
 
-        /* --- AREA LETTURA (CAROUSEL CENTRATO) --- */
-        /* Il contenitore che tiene le carte */
+        /* --- SCHERMATA MESCOLA (Nuova) --- */
+        #shuffle-animation {
+            font-size: 4rem;
+            color: var(--gold);
+            animation: spin 1s infinite linear;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- CAROUSEL --- */
         #carousel-container {
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
-            /* Centra verticalmente */
             overflow-x: auto;
-            /* Scroll orizzontale */
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             padding-left: 50vw;
-            /* Trucco per centrare il primo elemento */
             padding-right: 50vw;
-            /* Trucco per centrare l'ultimo elemento */
             box-sizing: border-box;
-            /* Nascondiamo la barra di scorrimento */
             scrollbar-width: none;
+            padding-bottom: 60px;
         }
 
         #carousel-container::-webkit-scrollbar {
             display: none;
         }
 
-        /* La singola slide (Mazzo o Carta) */
         .slide {
             flex: 0 0 300px;
-            /* Larghezza fissa per ogni "scheda" */
             scroll-snap-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin: 0 15px;
-            /* Spazio tra le carte */
             opacity: 0.5;
-            /* Sbiadite se non sono al centro */
             transform: scale(0.9);
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        /* Classe aggiunta via JS all'elemento centrale */
         .slide-active {
             opacity: 1;
             transform: scale(1);
         }
 
-        /* Stile della Carta */
+        /* Effetto "Peek" per il mazzo */
+        .peek-right {
+            animation: bounceRight 1.5s infinite;
+        }
+
+        @keyframes bounceRight {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-10px);
+            }
+        }
+
         .card-visual {
             width: 100%;
             border-radius: 8px;
@@ -192,7 +201,6 @@
         .card-back-pattern {
             width: 100%;
             height: 450px;
-            /* Altezza fissa per coerenza */
             background: repeating-linear-gradient(45deg, #111, #111 10px, #1a1a1a 10px, #1a1a1a 20px);
             border: 2px solid var(--gold-dim);
             display: flex;
@@ -201,6 +209,7 @@
             font-size: 3rem;
             color: var(--gold-dim);
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         .meaning-content {
@@ -226,6 +235,57 @@
             margin-top: 15px;
             display: block;
             font-size: 0.9rem;
+        }
+
+        /* Hint (Freccia che suggerisce scroll) */
+        #scroll-hint {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 2rem;
+            animation: pulseArrow 1.5s infinite;
+            display: none;
+            /* Nascosto di base */
+            z-index: 50;
+            pointer-events: none;
+            /* Lascia passare il tocco */
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes pulseArrow {
+            0% {
+                opacity: 0.3;
+                transform: translateY(-50%) translateX(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-50%) translateX(10px);
+            }
+
+            100% {
+                opacity: 0.3;
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+
+        .close-reading-btn {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #444;
+            color: #888;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        .close-reading-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
         }
 
         @keyframes fadeIn {
@@ -270,6 +330,11 @@
         <button class="cta-btn" onclick="startReading()">APRI IL MAZZO</button>
     </div>
 
+    <div id="screen-shuffle" class="screen">
+        <div id="shuffle-animation">✦</div>
+        <p style="color:#888; letter-spacing: 2px;">MESCOLO LE ENERGIE...</p>
+    </div>
+
     <div id="screen-reading" class="screen"
         style="padding:0; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);">
 
@@ -278,17 +343,17 @@
                 style="font-family:'Cinzel'; color:#444; font-size:0.8rem; letter-spacing:3px;">PREPARAZIONE</span>
         </div>
 
+        <div id="scroll-hint">→</div>
+
         <div id="carousel-container">
         </div>
 
-        <div style="position:absolute; bottom:30px; width:100%; text-align:center; z-index:10;">
-            <button onclick="goHome()"
-                style="background:none; border:none; color:#444; font-size:0.8rem; cursor:pointer">CHIUDI
-                LETTURA</button>
+        <div style="position:absolute; bottom:30px; width:100%; text-align:center; z-index:20;">
+            <button onclick="goHome()" class="close-reading-btn">CHIUDI LETTURA</button>
         </div>
     </div>
 
-    <script src="app.js?v=6"></script>
+    <script src="app.js?v=8"></script>
 </body>
 
 </html>
