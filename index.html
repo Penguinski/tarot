@@ -123,17 +123,69 @@
             transform: scale(0.95);
         }
 
-        /* --- SCHERMATA MESCOLA --- */
-        #shuffle-animation {
-            font-size: 4rem;
-            color: var(--gold);
-            animation: spin 1s infinite linear;
-            margin-bottom: 20px;
+
+        /* --- ANIMAZIONE MESCOLA (Nuova) --- */
+        .shuffle-container {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            margin: 0 auto 30px auto;
         }
 
-        @keyframes spin {
+        .shuffle-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, #111, #111 5px, #1a1a1a 5px, #1a1a1a 10px);
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
+        }
+
+        /* La carta che va a sinistra */
+        .sc-left {
+            animation: shuffleMoveLeft 0.8s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        /* La carta che va a destra */
+        .sc-right {
+            animation: shuffleMoveRight 0.8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        /* La carta centrale (ferma) */
+        .sc-center {
+            z-index: 3;
+        }
+
+        @keyframes shuffleMoveLeft {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+
+            50% {
+                transform: translateX(-60px) rotate(-15deg);
+            }
+
             100% {
-                transform: rotate(360deg);
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        @keyframes shuffleMoveRight {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+
+            50% {
+                transform: translateX(60px) rotate(15deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(0);
             }
         }
 
@@ -377,8 +429,12 @@
     </div>
 
     <div id="screen-shuffle" class="screen">
-        <div id="shuffle-animation">✦</div>
-        <p style="color:#888; letter-spacing: 2px;">MESCOLO LE ENERGIE...</p>
+        <div class="shuffle-container">
+            <div class="shuffle-card sc-left"></div>
+            <div class="shuffle-card sc-right"></div>
+            <div class="shuffle-card sc-center"></div>
+        </div>
+        <p style="color:#888; letter-spacing: 2px; font-size: 0.9rem; margin-top:20px;">MESCOLO LE ENERGIE...</p>
     </div>
 
     <div id="screen-reading" class="screen">
