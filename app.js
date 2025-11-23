@@ -181,3 +181,30 @@ document.addEventListener('mousemove', (e) => {
 
     activeSlide.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
+// --- GESTIONE FOCUS ALLO SCROLL ---
+// Questo è il pezzo che mancava: controlla costantemente dove stai guardando
+const carousel = document.getElementById('carousel-container');
+
+carousel.addEventListener('scroll', () => {
+    // 1. Se l'utente scorre, nascondi la freccia suggerimento
+    hideScrollHint();
+
+    // 2. Calcola il centro esatto dello schermo
+    const center = carousel.scrollLeft + (carousel.offsetWidth / 2);
+
+    // 3. Controlla ogni carta (slide)
+    document.querySelectorAll('.slide').forEach(slide => {
+        // Dov'è il centro di QUESTA carta?
+        const slideCenter = slide.offsetLeft + (slide.offsetWidth / 2);
+
+        // Quanto è distante dal centro dello schermo?
+        const dist = Math.abs(center - slideCenter);
+
+        // Se è vicina al centro (meno di 150px di distanza)
+        if (dist < 150) {
+            slide.classList.add('slide-active'); // INGRANDISCI E ILLUMINA
+        } else {
+            slide.classList.remove('slide-active'); // RIMPICCIOLISCI E SFOCA
+        }
+    });
+});
