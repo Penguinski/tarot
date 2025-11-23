@@ -7,6 +7,7 @@
     <title>Tarocchi</title>
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#1a1a1a">
     <style>
         body {
@@ -17,71 +18,106 @@
             padding: 20px;
             line-height: 1.6;
             text-align: center;
+            /* Evita il rimbalzo elastico su iOS */
+            overscroll-behavior-y: none;
         }
 
-        /* Stile Bottone */
+        /* Stile Bottoni Generici */
         button {
-            background: #d4af37;
-            /* Oro */
-            color: #000;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            border: none;
+            outline: none;
         }
 
-        /* Area della Carta */
+        /* Schermata Iniziale */
+        h1 {
+            font-weight: 200;
+            letter-spacing: 3px;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        /* Bottoni Intento */
+        .intent-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .btn-intent {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-intent:active {
+            background: #d4af37;
+            color: #000;
+            transform: scale(0.98);
+        }
+
+        /* Area della Carta (Risultato) */
         #card-display {
             display: none;
             /* Nascosto all'inizio */
             max-width: 600px;
             margin: 0 auto;
             animation: fadeIn 0.5s ease;
+            padding-bottom: 50px;
         }
 
-        /* Placeholder Immagine (finché non carichi i file veri) */
-        .img-placeholder {
-            width: 100%;
-            max-width: 300px;
-            height: 450px;
-            background-color: #333;
-            border: 2px solid #d4af37;
-            border-radius: 15px;
+        /* Immagine */
+        .card-container {
             margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
+            max-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #333;
         }
 
-        h1 {
-            font-weight: 300;
-            letter-spacing: 2px;
-            color: #d4af37;
+        #card-image {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         h2 {
             margin-bottom: 5px;
+            font-size: 1.8em;
+            color: #fff;
         }
 
         .keywords {
-            color: #888;
-            font-size: 0.9em;
+            color: #d4af37;
+            font-size: 0.85em;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
         }
 
+        /* Sezioni Testo */
         .section-title {
-            color: #d4af37;
-            font-size: 0.8em;
+            color: #666;
+            font-size: 0.75em;
             text-transform: uppercase;
             margin-top: 30px;
             letter-spacing: 1px;
+            font-weight: bold;
         }
 
         .box {
@@ -89,7 +125,19 @@
             padding: 20px;
             border-radius: 15px;
             text-align: left;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        /* Bottone Ricomincia */
+        .btn-restart {
+            background: #333;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 16px;
+            border-radius: 30px;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes fadeIn {
@@ -103,44 +151,40 @@
                 transform: translateY(0);
             }
         }
-
-        .intent-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .btn-intent {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-intent:active {
-            background: #d4af37;
-            color: #000;
-        }
     </style>
 </head>
 
 <body>
 
     <div id="landing">
+        <br>
         <h1>TAROCCHI</h1>
-        <p>Qual è il tuo intento oggi?</p>
+        <p>Cosa vuoi chiedere alle carte?</p>
 
         <div class="intent-buttons">
-            <button onclick="setIntent('Generale')" class="btn-intent">✨ Generale</button>
-            <button onclick="setIntent('Amore')" class="btn-intent">❤️ Amore</button>
-            <button onclick="setIntent('Lavoro')" class="btn-intent">💼 Lavoro</button>
-            <button onclick="setIntent('Crescita')" class="btn-intent">🌱 Crescita</button>
+            <button onclick="setIntent('Generale')" class="btn-intent">✨ Lettura Generale</button>
+            <button onclick="setIntent('Amore')" class="btn-intent">❤️ Amore & Relazioni</button>
+            <button onclick="setIntent('Lavoro')" class="btn-intent">💼 Lavoro & Soldi</button>
+            <button onclick="setIntent('Crescita')" class="btn-intent">🌱 Crescita Personale</button>
         </div>
+    </div>
+
+    <div id="card-display">
+        <h2 id="card-name">Nome Carta</h2>
+        <div class="keywords" id="card-keywords">Parole chiave</div>
+
+        <div class="card-container">
+            <img id="card-image" src="" alt="Carta dei Tarocchi">
+        </div>
+
+        <div class="section-title" id="section-meaning-title">Significato</div>
+
+        <div class="box" id="modern-meaning">...</div>
+
+        <div class="section-title">Spunto di Riflessione</div>
+        <div class="box" id="reflection" style="border-left: 3px solid #d4af37;">...</div>
+
+        <button onclick="location.reload()" class="btn-restart">Nuova Lettura</button>
     </div>
 
     <script src="app.js"></script>
