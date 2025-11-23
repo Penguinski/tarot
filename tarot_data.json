@@ -1,0 +1,310 @@
+[
+    {
+        "id": 0,
+        "name": "Il Matto",
+        "image": "assets/images/maj_00.jpg",
+        "keywords": [
+            "Inizio",
+            "Spontaneità",
+            "Follia",
+            "Libertà"
+        ],
+        "waite_meaning": "Lo spirito in cerca di esperienza.",
+        "modern_meaning": "Abbraccia l'ignoto e fidati del tuo istinto; ogni nuovo inizio richiede un salto di fede.",
+        "reflection": "Quale rischio sto evitando per paura di sembrare sciocco?"
+    },
+    {
+        "id": 1,
+        "name": "Il Bagatto",
+        "image": "assets/images/maj_01.jpg",
+        "keywords": [
+            "Manifestazione",
+            "Abilità",
+            "Potere",
+            "Azione"
+        ],
+        "waite_meaning": "La volontà nel suo atto di creazione.",
+        "modern_meaning": "Hai tutte le risorse necessarie per realizzare i tuoi obiettivi; è il momento di agire.",
+        "reflection": "Quali talenti non sto utilizzando appieno?"
+    },
+    {
+        "id": 2,
+        "name": "La Papessa",
+        "image": "assets/images/maj_02.jpg",
+        "keywords": [
+            "Intuizione",
+            "Mistero",
+            "Saggezza",
+            "Inconscio"
+        ],
+        "waite_meaning": "La saggezza che attende di essere svelata.",
+        "modern_meaning": "Ascolta la tua voce interiore e presta attenzione ai tuoi sogni; non tutto deve essere razionale.",
+        "reflection": "Cosa mi sta dicendo il mio intuito che sto ignorando?"
+    },
+    {
+        "id": 3,
+        "name": "L'Imperatrice",
+        "image": "assets/images/maj_03.jpg",
+        "keywords": [
+            "Fertilità",
+            "Abbondanza",
+            "Natura",
+            "Creatività"
+        ],
+        "waite_meaning": "La porta della vita e il cuore della natura.",
+        "modern_meaning": "Coltiva la bellezza e la creatività nella tua vita; permetti alle cose di crescere naturalmente.",
+        "reflection": "Come posso portare più bellezza e nutrimento nella mia vita?"
+    },
+    {
+        "id": 4,
+        "name": "L'Imperatore",
+        "image": "assets/images/maj_04.jpg",
+        "keywords": [
+            "Autorità",
+            "Struttura",
+            "Controllo",
+            "Paternità"
+        ],
+        "waite_meaning": "Il potere della ragione e della logica.",
+        "modern_meaning": "Stabilisci confini chiari e porta ordine nel caos; la disciplina è la chiave del successo.",
+        "reflection": "Dove ho bisogno di più struttura o disciplina?"
+    },
+    {
+        "id": 5,
+        "name": "Il Papa",
+        "image": "assets/images/maj_05.jpg",
+        "keywords": [
+            "Tradizione",
+            "Insegnamento",
+            "Spiritualità",
+            "Guida"
+        ],
+        "waite_meaning": "Il ponte tra il divino e l'umano.",
+        "modern_meaning": "Cerca saggezza nelle tradizioni o in un mentore; a volte la via battuta è quella giusta.",
+        "reflection": "Quali valori tradizionali o spirituali sono importanti per me ora?"
+    },
+    {
+        "id": 6,
+        "name": "Gli Amanti",
+        "image": "assets/images/maj_06.jpg",
+        "keywords": [
+            "Amore",
+            "Scelta",
+            "Armonia",
+            "Unione"
+        ],
+        "waite_meaning": "L'attrazione degli opposti e la scelta del cuore.",
+        "modern_meaning": "Sei di fronte a una scelta importante; segui ciò che risuona con i tuoi valori più profondi.",
+        "reflection": "Quale scelta devo compiere per essere fedele a me stesso?"
+    },
+    {
+        "id": 7,
+        "name": "Il Carro",
+        "image": "assets/images/maj_07.jpg",
+        "keywords": [
+            "Vittoria",
+            "Volontà",
+            "Determinazione",
+            "Viaggio"
+        ],
+        "waite_meaning": "Il trionfo della mente sulla materia.",
+        "modern_meaning": "Mantieni il focus e la determinazione; puoi superare gli ostacoli con la forza di volontà.",
+        "reflection": "Cosa sto cercando di controllare eccessivamente?"
+    },
+    {
+        "id": 8,
+        "name": "La Forza",
+        "image": "assets/images/maj_08.jpg",
+        "keywords": [
+            "Coraggio",
+            "Pazienza",
+            "Compassione",
+            "Forza interiore"
+        ],
+        "waite_meaning": "La forza che risiede nella gentilezza.",
+        "modern_meaning": "Affronta le sfide con compassione e pazienza piuttosto che con forza bruta.",
+        "reflection": "In quale situazione devo mostrare gentilezza invece di rabbia?"
+    },
+    {
+        "id": 9,
+        "name": "L'Eremita",
+        "image": "assets/images/maj_09.jpg",
+        "keywords": [
+            "Introspezione",
+            "Solitudine",
+            "Guida interiore",
+            "Ricerca"
+        ],
+        "waite_meaning": "La luce della verità interiore.",
+        "modern_meaning": "Prenditi del tempo per stare da solo e riflettere; le risposte che cerchi sono dentro di te.",
+        "reflection": "Di cosa ho bisogno di liberarmi per trovare la mia verità?"
+    },
+    {
+        "id": 10,
+        "name": "La Ruota della Fortuna",
+        "image": "assets/images/maj_10.jpg",
+        "keywords": [
+            "Cambiamento",
+            "Destino",
+            "Cicli",
+            "Fortuna"
+        ],
+        "waite_meaning": "Il perpetuo movimento dell'universo.",
+        "modern_meaning": "Accetta che tutto cambia; cogli le opportunità quando si presentano e adattati al flusso.",
+        "reflection": "Come posso adattarmi meglio ai cambiamenti in corso?"
+    },
+    {
+        "id": 11,
+        "name": "La Giustizia",
+        "image": "assets/images/maj_11.jpg",
+        "keywords": [
+            "Equità",
+            "Verità",
+            "Legge",
+            "Causa-effetto"
+        ],
+        "waite_meaning": "La verità che taglia ogni illusione.",
+        "modern_meaning": "Sii onesto con te stesso e con gli altri; ogni azione ha una conseguenza.",
+        "reflection": "Sto agendo con integrità e onestà?"
+    },
+    {
+        "id": 12,
+        "name": "L'Appeso",
+        "image": "assets/images/maj_12.jpg",
+        "keywords": [
+            "Sacrificio",
+            "Nuova prospettiva",
+            "Attesa",
+            "Sospensione"
+        ],
+        "waite_meaning": "La saggezza che viene dalla resa.",
+        "modern_meaning": "A volte bisogna fermarsi e guardare le cose da un'altra angolazione; lascia andare il controllo.",
+        "reflection": "Cosa devo sacrificare per ottenere una visione più chiara?"
+    },
+    {
+        "id": 13,
+        "name": "La Morte",
+        "image": "assets/images/maj_13.jpg",
+        "keywords": [
+            "Fine",
+            "Trasformazione",
+            "Rinascita",
+            "Cambiamento"
+        ],
+        "waite_meaning": "La fine necessaria per un nuovo inizio.",
+        "modern_meaning": "Non temere i finali; sono necessari per la tua evoluzione e per fare spazio al nuovo.",
+        "reflection": "Cosa è giunto il momento di lasciar andare?"
+    },
+    {
+        "id": 14,
+        "name": "La Temperanza",
+        "image": "assets/images/maj_14.jpg",
+        "keywords": [
+            "Equilibrio",
+            "Moderazione",
+            "Guarigione",
+            "Armonia"
+        ],
+        "waite_meaning": "L'alchimia dell'anima.",
+        "modern_meaning": "Cerca l'equilibrio e la moderazione; integra gli opposti per trovare la pace interiore.",
+        "reflection": "Dove ho perso il mio equilibrio?"
+    },
+    {
+        "id": 15,
+        "name": "Il Diavolo",
+        "image": "assets/images/maj_15.jpg",
+        "keywords": [
+            "Dipendenza",
+            "Materialismo",
+            "Ombra",
+            "Tentazione"
+        ],
+        "waite_meaning": "Le catene che ci costruiamo da soli.",
+        "modern_meaning": "Riconosci le tue dipendenze e i comportamenti autodistruttivi; sei più libero di quanto pensi.",
+        "reflection": "Quali catene mi sto imponendo da solo?"
+    },
+    {
+        "id": 16,
+        "name": "La Torre",
+        "image": "assets/images/maj_16.jpg",
+        "keywords": [
+            "Distruzione",
+            "Rivelazione",
+            "Caos",
+            "Risveglio"
+        ],
+        "waite_meaning": "Il fulmine che distrugge le false strutture.",
+        "modern_meaning": "Anche se doloroso, il crollo delle vecchie strutture porta verità e liberazione.",
+        "reflection": "Quale verità sto evitando che potrebbe sconvolgere la mia vita?"
+    },
+    {
+        "id": 17,
+        "name": "Le Stelle",
+        "image": "assets/images/maj_17.jpg",
+        "keywords": [
+            "Speranza",
+            "Ispirazione",
+            "Serenità",
+            "Guarigione"
+        ],
+        "waite_meaning": "La luce della speranza dopo la tempesta.",
+        "modern_meaning": "Abbi fede nel futuro e lasciati ispirare; sei sulla strada giusta per la guarigione.",
+        "reflection": "Cosa mi dà speranza e ispirazione oggi?"
+    },
+    {
+        "id": 18,
+        "name": "La Luna",
+        "image": "assets/images/maj_18.jpg",
+        "keywords": [
+            "Illusione",
+            "Paura",
+            "Sogno",
+            "Inconscio"
+        ],
+        "waite_meaning": "Il regno dei sogni e delle ombre.",
+        "modern_meaning": "Non tutto è come sembra; affronta le tue paure e naviga attraverso l'incertezza con intuito.",
+        "reflection": "Quali paure nascoste mi stanno bloccando?"
+    },
+    {
+        "id": 19,
+        "name": "Il Sole",
+        "image": "assets/images/maj_19.jpg",
+        "keywords": [
+            "Gioia",
+            "Successo",
+            "Vitalità",
+            "Chiarezza"
+        ],
+        "waite_meaning": "La luce della coscienza e della felicità.",
+        "modern_meaning": "Goditi il successo e la felicità; lascia che la tua luce interiore brilli senza riserve.",
+        "reflection": "Cosa mi rende veramente felice e vitale?"
+    },
+    {
+        "id": 20,
+        "name": "Il Giudizio",
+        "image": "assets/images/maj_20.jpg",
+        "keywords": [
+            "Rinascita",
+            "Chiamata",
+            "Assoluzione",
+            "Risveglio"
+        ],
+        "waite_meaning": "La chiamata al risveglio spirituale.",
+        "modern_meaning": "È il momento di perdonare te stesso e gli altri; rispondi alla tua chiamata interiore.",
+        "reflection": "A quale chiamata sto cercando di rispondere?"
+    },
+    {
+        "id": 21,
+        "name": "Il Mondo",
+        "image": "assets/images/maj_21.jpg",
+        "keywords": [
+            "Completamento",
+            "Realizzazione",
+            "Viaggio",
+            "Unità"
+        ],
+        "waite_meaning": "La danza della vita completata.",
+        "modern_meaning": "Hai completato un ciclo importante; celebra i tuoi successi e preparati per il prossimo livello.",
+        "reflection": "Cosa ho portato a termine di cui posso essere fiero?"
+    }
+]

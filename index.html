@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tarocchi</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a1a1a">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Stile Bottone */
+        button {
+            background: #d4af37;
+            /* Oro */
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Area della Carta */
+        #card-display {
+            display: none;
+            /* Nascosto all'inizio */
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Placeholder Immagine (finché non carichi i file veri) */
+        .img-placeholder {
+            width: 100%;
+            max-width: 300px;
+            height: 450px;
+            background-color: #333;
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        h1 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #d4af37;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        .keywords {
+            color: #888;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #d4af37;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+
+        .box {
+            background: #252525;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="landing">
+        <h1>TAROCCHI</h1>
+        <p>Concentrati sulla tua domanda.</p>
+        <button onclick="drawOneCard()">Pesca una Carta</button>
+    </div>
+
+    <div id="card-display">
+        <h2 id="card-name">Nome Carta</h2>
+        <div class="keywords" id="card-keywords">Parole chiave</div>
+
+        <div class="img-placeholder">
+            <img id="card-image" style="display:none;" src="" alt="">
+            <span style="font-size: 40px;">🔮</span>
+        </div>
+
+        <div class="section-title">Significato</div>
+        <div class="box" id="modern-meaning">...</div>
+
+        <div class="section-title">Riflessione</div>
+        <div class="box" id="reflection" style="border-left: 3px solid #d4af37;">...</div>
+
+        <button onclick="drawOneCard()">Pesca ancora</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
