@@ -1,53 +1,58 @@
 let deck = [];
 
-// 1. Appena l'app si apre, carica i dati dal file JSON
+// 1. Carica i dati
 async function loadDeck() {
     try {
         const response = await fetch('tarot_data.json');
+        if (!response.ok) throw new Error("File JSON non trovato");
+
         deck = await response.json();
         console.log("Mazzo caricato:", deck.length, "carte");
     } catch (error) {
-        console.error("Errore nel caricamento del mazzo:", error);
-        alert("Impossibile caricare le carte.");
+        console.error("Errore:", error);
+        alert("Errore nel caricamento delle carte. Ricarica la pagina.");
     }
 }
 
-// 2. Funzione per pescare una carta
+// 2. Pesca carta
 function drawOneCard() {
-    if (deck.length === 0) return;
+    // PROTEZIONE: Se il mazzo è vuoto, avvisiamo invece di non fare nulla
+    if (deck.length === 0) {
+        alert("Sto ancora mescolando il mazzo... Riprova tra un secondo!");
+        return;
+    }
 
-    // Scegli un indice casuale
     const randomIndex = Math.floor(Math.random() * deck.length);
     const card = deck[randomIndex];
 
-    // 3. Aggiorna l'HTML con i dati della carta
-    document.getElementById('landing').style.display = 'none'; // Nasconde l'intro
+    // Nascondi intro e mostra risultato
+    document.getElementById('landing').style.display = 'none';
     const display = document.getElementById('card-display');
-    display.style.display = 'block'; // Mostra la carta
+    display.style.display = 'block';
 
-    // Inserisce i testi
+    // Aggiorna i testi
     document.getElementById('card-name').innerText = card.name;
+
+    // --- QUESTA È LA RIGA CHE MANCAVA PER LE IMMAGINI ---
+    document.getElementById('card-image').src = card.image;
     document.getElementById('card-image').alt = card.name;
-    // Nota: L'immagine non si vedrà ancora, apparirà un box grigio per ora
+    // ----------------------------------------------------
 
     document.getElementById('card-keywords').innerText = card.keywords.join(" • ");
     document.getElementById('modern-meaning').innerText = card.modern_meaning;
     document.getElementById('reflection').innerText = card.reflection;
 
-    // Scrolla in alto
     window.scrollTo(0, 0);
 }
 
-// Avvia il caricamento
+// Avvia il caricamento subito
 loadDeck();
 
+// Gestione Intento
 let currentIntent = "Generale";
 
 function setIntent(intent) {
     currentIntent = intent;
-    // Cambiamo il testo nella schermata successiva
     document.getElementById('section-meaning-title').innerText = "Significato per: " + intent;
-
-    // Pesca la carta
     drawOneCard();
 }
