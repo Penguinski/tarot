@@ -300,11 +300,990 @@
         "keywords": [
             "Completamento",
             "Realizzazione",
+            "Viaggio"
+        ],
+        "waite_meaning": "Il trionfo della mente sulla materia.",
+        "modern_meaning": "Mantieni il focus e la determinazione; puoi superare gli ostacoli con la forza di volontà.",
+        "reflection": "Cosa sto cercando di controllare eccessivamente?"
+    },
+    {
+        "id": 8,
+        "name": "La Forza",
+        "image": "assets/images/maj08.jpg",
+        "keywords": [
+            "Coraggio",
+            "Pazienza",
+            "Compassione",
+            "Forza interiore"
+        ],
+        "waite_meaning": "La forza che risiede nella gentilezza.",
+        "modern_meaning": "Affronta le sfide con compassione e pazienza piuttosto che con forza bruta.",
+        "reflection": "In quale situazione devo mostrare gentilezza invece di rabbia?"
+    },
+    {
+        "id": 9,
+        "name": "L'Eremita",
+        "image": "assets/images/maj09.jpg",
+        "keywords": [
+            "Introspezione",
+            "Solitudine",
+            "Guida interiore",
+            "Ricerca"
+        ],
+        "waite_meaning": "La luce della verità interiore.",
+        "modern_meaning": "Prenditi del tempo per stare da solo e riflettere; le risposte che cerchi sono dentro di te.",
+        "reflection": "Di cosa ho bisogno di liberarmi per trovare la mia verità?"
+    },
+    {
+        "id": 10,
+        "name": "La Ruota della Fortuna",
+        "image": "assets/images/maj10.jpg",
+        "keywords": [
+            "Cambiamento",
+            "Destino",
+            "Cicli",
+            "Fortuna"
+        ],
+        "waite_meaning": "Il perpetuo movimento dell'universo.",
+        "modern_meaning": "Accetta che tutto cambia; cogli le opportunità quando si presentano e adattati al flusso.",
+        "reflection": "Come posso adattarmi meglio ai cambiamenti in corso?"
+    },
+    {
+        "id": 11,
+        "name": "La Giustizia",
+        "image": "assets/images/maj11.jpg",
+        "keywords": [
+            "Equità",
+            "Verità",
+            "Legge",
+            "Causa-effetto"
+        ],
+        "waite_meaning": "La verità che taglia ogni illusione.",
+        "modern_meaning": "Sii onesto con te stesso e con gli altri; ogni azione ha una conseguenza.",
+        "reflection": "Sto agendo con integrità e onestà?"
+    },
+    {
+        "id": 12,
+        "name": "L'Appeso",
+        "image": "assets/images/maj12.jpg",
+        "keywords": [
+            "Sacrificio",
+            "Nuova prospettiva",
+            "Attesa",
+            "Sospensione"
+        ],
+        "waite_meaning": "La saggezza che viene dalla resa.",
+        "modern_meaning": "A volte bisogna fermarsi e guardare le cose da un'altra angolazione; lascia andare il controllo.",
+        "reflection": "Cosa devo sacrificare per ottenere una visione più chiara?"
+    },
+    {
+        "id": 13,
+        "name": "La Morte",
+        "image": "assets/images/maj13.jpg",
+        "keywords": [
+            "Fine",
+            "Trasformazione",
+            "Rinascita",
+            "Cambiamento"
+        ],
+        "waite_meaning": "La fine necessaria per un nuovo inizio.",
+        "modern_meaning": "Non temere i finali; sono necessari per la tua evoluzione e per fare spazio al nuovo.",
+        "reflection": "Cosa è giunto il momento di lasciar andare?"
+    },
+    {
+        "id": 14,
+        "name": "La Temperanza",
+        "image": "assets/images/maj14.jpg",
+        "keywords": [
+            "Equilibrio",
+            "Moderazione",
+            "Guarigione",
+            "Armonia"
+        ],
+        "waite_meaning": "L'alchimia dell'anima.",
+        "modern_meaning": "Cerca l'equilibrio e la moderazione; integra gli opposti per trovare la pace interiore.",
+        "reflection": "Dove ho perso il mio equilibrio?"
+    },
+    {
+        "id": 15,
+        "name": "Il Diavolo",
+        "image": "assets/images/maj15.jpg",
+        "keywords": [
+            "Dipendenza",
+            "Materialismo",
+            "Ombra",
+            "Tentazione"
+        ],
+        "waite_meaning": "Le catene che ci costruiamo da soli.",
+        "modern_meaning": "Riconosci le tue dipendenze e i comportamenti autodistruttivi; sei più libero di quanto pensi.",
+        "reflection": "Quali catene mi sto imponendo da solo?"
+    },
+    {
+        "id": 16,
+        "name": "La Torre",
+        "image": "assets/images/maj16.jpg",
+        "keywords": [
+            "Distruzione",
+            "Rivelazione",
+            "Caos",
+            "Risveglio"
+        ],
+        "waite_meaning": "Il fulmine che distrugge le false strutture.",
+        "modern_meaning": "Anche se doloroso, il crollo delle vecchie strutture porta verità e liberazione.",
+        "reflection": "Quale verità sto evitando che potrebbe sconvolgere la mia vita?"
+    },
+    {
+        "id": 17,
+        "name": "Le Stelle",
+        "image": "assets/images/maj17.jpg",
+        "keywords": [
+            "Speranza",
+            "Ispirazione",
+            "Serenità",
+            "Guarigione"
+        ],
+        "waite_meaning": "La luce della speranza dopo la tempesta.",
+        "modern_meaning": "Abbi fede nel futuro e lasciati ispirare; sei sulla strada giusta per la guarigione.",
+        "reflection": "Cosa mi dà speranza e ispirazione oggi?"
+    },
+    {
+        "id": 18,
+        "name": "La Luna",
+        "image": "assets/images/maj18.jpg",
+        "keywords": [
+            "Illusione",
+            "Paura",
+            "Sogno",
+            "Inconscio"
+        ],
+        "waite_meaning": "Il regno dei sogni e delle ombre.",
+        "modern_meaning": "Non tutto è come sembra; affronta le tue paure e naviga attraverso l'incertezza con intuito.",
+        "reflection": "Quali paure nascoste mi stanno bloccando?"
+    },
+    {
+        "id": 19,
+        "name": "Il Sole",
+        "image": "assets/images/maj19.jpg",
+        "keywords": [
+            "Gioia",
+            "Successo",
+            "Vitalità",
+            "Chiarezza"
+        ],
+        "waite_meaning": "La luce della coscienza e della felicità.",
+        "modern_meaning": "Goditi il successo e la felicità; lascia che la tua luce interiore brilli senza riserve.",
+        "reflection": "Cosa mi rende veramente felice e vitale?"
+    },
+    {
+        "id": 20,
+        "name": "Il Giudizio",
+        "image": "assets/images/maj20.jpg",
+        "keywords": [
+            "Rinascita",
+            "Chiamata",
+            "Assoluzione",
+            "Risveglio"
+        ],
+        "waite_meaning": "La chiamata al risveglio spirituale.",
+        "modern_meaning": "È il momento di perdonare te stesso e gli altri; rispondi alla tua chiamata interiore.",
+        "reflection": "A quale chiamata sto cercando di rispondere?"
+    },
+    {
+        "id": 21,
+        "name": "Il Mondo",
+        "image": "assets/images/maj21.jpg",
+        "keywords": [
+            "Completamento",
+            "Realizzazione",
             "Viaggio",
             "Unità"
         ],
         "waite_meaning": "La danza della vita completata.",
         "modern_meaning": "Hai completato un ciclo importante; celebra i tuoi successi e preparati per il prossimo livello.",
         "reflection": "Cosa ho portato a termine di cui posso essere fiero?"
+    },
+    {
+        "id": 22,
+        "name": "Asso di Bastoni",
+        "image": "assets/images/wands01.jpg",
+        "keywords": [
+            "Ispirazione",
+            "Nuovo inizio",
+            "Potenziale",
+            "Energia"
+        ],
+        "waite_meaning": "L'origine dell'energia creativa.",
+        "modern_meaning": "Un'esplosione di ispirazione e creatività; è il momento perfetto per iniziare un nuovo progetto.",
+        "reflection": "Cosa mi accende di passione in questo momento?"
+    },
+    {
+        "id": 23,
+        "name": "Due di Bastoni",
+        "image": "assets/images/wands02.jpg",
+        "keywords": [
+            "Pianificazione",
+            "Decisioni",
+            "Scoperta",
+            "Futuro"
+        ],
+        "waite_meaning": "Il dominio sulle proprie creazioni.",
+        "modern_meaning": "Stai pianificando il tuo futuro; esci dalla tua zona di comfort ed esplora nuove possibilità.",
+        "reflection": "Quale primo passo devo compiere verso il mio obiettivo?"
+    },
+    {
+        "id": 24,
+        "name": "Tre di Bastoni",
+        "image": "assets/images/wands03.jpg",
+        "keywords": [
+            "Espansione",
+            "Lungimiranza",
+            "Crescita",
+            "Orizzonti"
+        ],
+        "waite_meaning": "La forza stabilita e l'impresa commerciale.",
+        "modern_meaning": "I tuoi piani stanno prendendo forma; guarda avanti con fiducia e preparati all'espansione.",
+        "reflection": "Dove voglio essere tra un anno?"
+    },
+    {
+        "id": 25,
+        "name": "Quattro di Bastoni",
+        "image": "assets/images/wands04.jpg",
+        "keywords": [
+            "Celebrazione",
+            "Armonia",
+            "Casa",
+            "Comunità"
+        ],
+        "waite_meaning": "Il riposo perfetto e la pace domestica.",
+        "modern_meaning": "È tempo di celebrare i successi raggiunti; goditi la stabilità e la gioia con le persone care.",
+        "reflection": "Cosa posso celebrare oggi nella mia vita?"
+    },
+    {
+        "id": 26,
+        "name": "Cinque di Bastoni",
+        "image": "assets/images/wands05.jpg",
+        "keywords": [
+            "Conflitto",
+            "Competizione",
+            "Tensione",
+            "Sfida"
+        ],
+        "waite_meaning": "La lotta per la ricchezza e la fortuna.",
+        "modern_meaning": "Stai affrontando competizione o conflitti minori; usa questa energia per migliorarti, non per distruggere.",
+        "reflection": "Sto combattendo una battaglia che vale la pena?"
+    },
+    {
+        "id": 27,
+        "name": "Sei di Bastoni",
+        "image": "assets/images/wands06.jpg",
+        "keywords": [
+            "Vittoria",
+            "Riconoscimento",
+            "Orgoglio",
+            "Successo"
+        ],
+        "waite_meaning": "Il trionfo meritato.",
+        "modern_meaning": "I tuoi sforzi sono stati riconosciuti; goditi il successo ma rimani umile.",
+        "reflection": "Come posso accettare i complimenti con grazia?"
+    },
+    {
+        "id": 28,
+        "name": "Sette di Bastoni",
+        "image": "assets/images/wands07.jpg",
+        "keywords": [
+            "Difesa",
+            "Perseveranza",
+            "Coraggio",
+            "Resistenza"
+        ],
+        "waite_meaning": "Il coraggio di fronte alle avversità.",
+        "modern_meaning": "Difendi le tue posizioni e i tuoi valori; non mollare anche se ti senti sotto pressione.",
+        "reflection": "Per cosa sono disposto a lottare?"
+    },
+    {
+        "id": 29,
+        "name": "Otto di Bastoni",
+        "image": "assets/images/wands08.jpg",
+        "keywords": [
+            "Velocità",
+            "Movimento",
+            "Azione rapida",
+            "Notizie"
+        ],
+        "waite_meaning": "L'attività rapida e la fretta.",
+        "modern_meaning": "Le cose si muovono velocemente; agisci ora e non esitare, il momento è propizio.",
+        "reflection": "Dove devo agire con rapidità?"
+    },
+    {
+        "id": 30,
+        "name": "Nove di Bastoni",
+        "image": "assets/images/wands09.jpg",
+        "keywords": [
+            "Resilienza",
+            "Persistenza",
+            "Ultima difesa",
+            "Cautela"
+        ],
+        "waite_meaning": "La forza nell'opposizione.",
+        "modern_meaning": "Sei stanco ma non mollare; sei quasi arrivato al traguardo, resisti ancora un po'.",
+        "reflection": "Quale ultima riserva di forza posso attingere?"
+    },
+    {
+        "id": 31,
+        "name": "Dieci di Bastoni",
+        "image": "assets/images/wands10.jpg",
+        "keywords": [
+            "Peso",
+            "Responsabilità",
+            "Stress",
+            "Sovraccarico"
+        ],
+        "waite_meaning": "L'oppressione della ricchezza e del potere.",
+        "modern_meaning": "Ti sei fatto carico di troppe responsabilità; impara a delegare o a lasciare andare ciò che non serve.",
+        "reflection": "Quale peso posso deporre oggi?"
+    },
+    {
+        "id": 32,
+        "name": "Fante di Bastoni",
+        "image": "assets/images/wands11.jpg",
+        "keywords": [
+            "Entusiasmo",
+            "Esplorazione",
+            "Nuova idea",
+            "Messaggero"
+        ],
+        "waite_meaning": "Un messaggero fedele e uno straniero benevolo.",
+        "modern_meaning": "Una nuova idea o passione sta nascendo; sii curioso e aperto alle novità.",
+        "reflection": "Quale nuova avventura mi sta chiamando?"
+    },
+    {
+        "id": 33,
+        "name": "Cavaliere di Bastoni",
+        "image": "assets/images/wands12.jpg",
+        "keywords": [
+            "Azione",
+            "Avventura",
+            "Impulsività",
+            "Passione"
+        ],
+        "waite_meaning": "La partenza e l'assenza.",
+        "modern_meaning": "Agisci con passione e coraggio, ma attento a non essere troppo impulsivo.",
+        "reflection": "Sto correndo verso qualcosa o scappando da qualcosa?"
+    },
+    {
+        "id": 34,
+        "name": "Regina di Bastoni",
+        "image": "assets/images/wands13.jpg",
+        "keywords": [
+            "Carisma",
+            "Fiducia",
+            "Indipendenza",
+            "Calore"
+        ],
+        "waite_meaning": "La natura amichevole e casta.",
+        "modern_meaning": "Irradia fiducia e calore; sei capace di guidare gli altri con il tuo esempio positivo.",
+        "reflection": "Come posso ispirare gli altri oggi?"
+    },
+    {
+        "id": 35,
+        "name": "Re di Bastoni",
+        "image": "assets/images/wands14.jpg",
+        "keywords": [
+            "Leadership",
+            "Visione",
+            "Onore",
+            "Imprenditorialità"
+        ],
+        "waite_meaning": "L'uomo onesto e coscienzioso.",
+        "modern_meaning": "Prendi il comando della situazione con visione e integrità; hai il potere di realizzare grandi cose.",
+        "reflection": "Che tipo di leader voglio essere?"
+    },
+    {
+        "id": 36,
+        "name": "Asso di Coppe",
+        "image": "assets/images/cups01.jpg",
+        "keywords": [
+            "Amore",
+            "Nuovi sentimenti",
+            "Intuizione",
+            "Compassione"
+        ],
+        "waite_meaning": "La casa del vero cuore.",
+        "modern_meaning": "Un nuovo inizio emotivo; apri il tuo cuore all'amore e alla compassione.",
+        "reflection": "A cosa sto aprendo il mio cuore?"
+    },
+    {
+        "id": 37,
+        "name": "Due di Coppe",
+        "image": "assets/images/cups02.jpg",
+        "keywords": [
+            "Unione",
+            "Partnership",
+            "Attrazione",
+            "Connessione"
+        ],
+        "waite_meaning": "L'amore e l'amicizia sincera.",
+        "modern_meaning": "Una connessione profonda con qualcuno; coltiva le tue relazioni con cura e rispetto.",
+        "reflection": "Con chi sento una vera connessione?"
+    },
+    {
+        "id": 38,
+        "name": "Tre di Coppe",
+        "image": "assets/images/cups03.jpg",
+        "keywords": [
+            "Amicizia",
+            "Comunità",
+            "Festa",
+            "Collaborazione"
+        ],
+        "waite_meaning": "La conclusione felice e la vittoria.",
+        "modern_meaning": "Celebra con gli amici e condividi la tua gioia; il supporto della comunità è prezioso.",
+        "reflection": "Chi sono le persone che mi sostengono?"
+    },
+    {
+        "id": 39,
+        "name": "Quattro di Coppe",
+        "image": "assets/images/cups04.jpg",
+        "keywords": [
+            "Apatia",
+            "Contemplazione",
+            "Noia",
+            "Rifiuto"
+        ],
+        "waite_meaning": "La stanchezza e il disgusto immaginario.",
+        "modern_meaning": "Non chiuderti in te stesso; guarda bene, c'è un'opportunità che stai ignorando.",
+        "reflection": "Cosa mi sto perdendo concentrandomi su ciò che non ho?"
+    },
+    {
+        "id": 40,
+        "name": "Cinque di Coppe",
+        "image": "assets/images/cups05.jpg",
+        "keywords": [
+            "Perdita",
+            "Rimpianto",
+            "Delusione",
+            "Dolore"
+        ],
+        "waite_meaning": "La perdita parziale ma non totale.",
+        "modern_meaning": "È normale essere tristi per una perdita, ma non dimenticare ciò che ti è rimasto.",
+        "reflection": "Cosa posso ancora salvare e valorizzare?"
+    },
+    {
+        "id": 41,
+        "name": "Sei di Coppe",
+        "image": "assets/images/cups06.jpg",
+        "keywords": [
+            "Nostalgia",
+            "Ricordi",
+            "Innocenza",
+            "Infanzia"
+        ],
+        "waite_meaning": "Il passato che guarda al futuro.",
+        "modern_meaning": "Riconnettiti con la tua innocenza interiore o con qualcuno del passato; i ricordi possono guarire.",
+        "reflection": "Quale ricordo felice può darmi forza oggi?"
+    },
+    {
+        "id": 42,
+        "name": "Sette di Coppe",
+        "image": "assets/images/cups07.jpg",
+        "keywords": [
+            "Illusioni",
+            "Scelte",
+            "Sogni",
+            "Confusione"
+        ],
+        "waite_meaning": "I favori illusori e le immagini della fantasia.",
+        "modern_meaning": "Hai molte opzioni, ma non tutte sono reali; scegli con saggezza e non perderti nei sogni.",
+        "reflection": "Quale scelta è basata sulla realtà e non sull'illusione?"
+    },
+    {
+        "id": 43,
+        "name": "Otto di Coppe",
+        "image": "assets/images/cups08.jpg",
+        "keywords": [
+            "Abbandono",
+            "Ricerca",
+            "Viaggio interiore",
+            "Distacco"
+        ],
+        "waite_meaning": "Il declino di un interesse.",
+        "modern_meaning": "È tempo di lasciare andare ciò che non ti soddisfa più e cercare un significato più profondo.",
+        "reflection": "Cosa devo lasciarmi alle spalle per crescere?"
+    },
+    {
+        "id": 44,
+        "name": "Nove di Coppe",
+        "image": "assets/images/cups09.jpg",
+        "keywords": [
+            "Soddisfazione",
+            "Desideri",
+            "Gratitudine",
+            "Piacere"
+        ],
+        "waite_meaning": "Il successo materiale e il benessere.",
+        "modern_meaning": "I tuoi desideri si stanno realizzando; sii grato e goditi questo momento di pienezza.",
+        "reflection": "Di cosa sono profondamente grato oggi?"
+    },
+    {
+        "id": 45,
+        "name": "Dieci di Coppe",
+        "image": "assets/images/cups10.jpg",
+        "keywords": [
+            "Felicità",
+            "Famiglia",
+            "Armonia",
+            "Appagamento"
+        ],
+        "waite_meaning": "L'appagamento del cuore e la perfezione dell'amore umano.",
+        "modern_meaning": "Armonia totale nelle relazioni e in famiglia; hai trovato il tuo posto felice.",
+        "reflection": "Come posso condividere la mia felicità con gli altri?"
+    },
+    {
+        "id": 46,
+        "name": "Fante di Coppe",
+        "image": "assets/images/cups11.jpg",
+        "keywords": [
+            "Messaggio",
+            "Creatività",
+            "Intuizione",
+            "Sensibilità"
+        ],
+        "waite_meaning": "Un giovane studioso e riflessivo.",
+        "modern_meaning": "Sii aperto ai messaggi del cuore e alla tua intuizione creativa; una dolce sorpresa è in arrivo.",
+        "reflection": "Quale messaggio sta cercando di inviarmi il mio cuore?"
+    },
+    {
+        "id": 47,
+        "name": "Cavaliere di Coppe",
+        "image": "assets/images/cups12.jpg",
+        "keywords": [
+            "Romanticismo",
+            "Fascino",
+            "Immaginazione",
+            "Proposta"
+        ],
+        "waite_meaning": "L'arrivo, l'approccio e il messaggero.",
+        "modern_meaning": "Segui il tuo cuore e i tuoi ideali; un'offerta romantica o creativa potrebbe presentarsi.",
+        "reflection": "Sto seguendo i miei sogni o solo la logica?"
+    },
+    {
+        "id": 48,
+        "name": "Regina di Coppe",
+        "image": "assets/images/cups13.jpg",
+        "keywords": [
+            "Compassione",
+            "Cura",
+            "Intuizione",
+            "Stabilità emotiva"
+        ],
+        "waite_meaning": "La visione onirica e la poesia.",
+        "modern_meaning": "Ascolta gli altri con empatia e fidati del tuo intuito; la tua sensibilità è la tua forza.",
+        "reflection": "Come posso prendermi cura di me stesso e degli altri?"
+    },
+    {
+        "id": 49,
+        "name": "Re di Coppe",
+        "image": "assets/images/cups14.jpg",
+        "keywords": [
+            "Equilibrio",
+            "Diplomazia",
+            "Saggezza",
+            "Controllo emotivo"
+        ],
+        "waite_meaning": "L'uomo di affari, legge o divinità.",
+        "modern_meaning": "Mantieni la calma e gestisci le emozioni con maturità; sii un porto sicuro per chi ti circonda.",
+        "reflection": "Come posso gestire le mie emozioni con saggezza?"
+    },
+    {
+        "id": 50,
+        "name": "Asso di Spade",
+        "image": "assets/images/swords01.jpg",
+        "keywords": [
+            "Chiarezza",
+            "Verità",
+            "Nuova idea",
+            "Taglio netto"
+        ],
+        "waite_meaning": "Il trionfo della forza.",
+        "modern_meaning": "Un momento di lucidità mentale; taglia via la confusione e vedi la verità per quella che è.",
+        "reflection": "Quale verità devo accettare ora?"
+    },
+    {
+        "id": 51,
+        "name": "Due di Spade",
+        "image": "assets/images/swords02.jpg",
+        "keywords": [
+            "Indecisione",
+            "Stallo",
+            "Blocco",
+            "Negazione"
+        ],
+        "waite_meaning": "La conformità e l'equilibrio del coraggio.",
+        "modern_meaning": "Sei bloccato in una decisione difficile; togli la benda e affronta la scelta che stai evitando.",
+        "reflection": "Cosa mi impedisce di prendere una decisione?"
+    },
+    {
+        "id": 52,
+        "name": "Tre di Spade",
+        "image": "assets/images/swords03.jpg",
+        "keywords": [
+            "Dolore",
+            "Tristezza",
+            "Separazione",
+            "Guarigione"
+        ],
+        "waite_meaning": "La rimozione, l'assenza e il ritardo.",
+        "modern_meaning": "Permettiti di sentire il dolore per poterlo rilasciare; la guarigione inizia dall'accettazione.",
+        "reflection": "Quale ferita ha bisogno della mia attenzione?"
+    },
+    {
+        "id": 53,
+        "name": "Quattro di Spade",
+        "image": "assets/images/swords04.jpg",
+        "keywords": [
+            "Riposo",
+            "Recupero",
+            "Contemplazione",
+            "Pausa"
+        ],
+        "waite_meaning": "La vigilanza, la ritirata e la solitudine.",
+        "modern_meaning": "Prenditi una pausa necessaria; la tua mente ha bisogno di silenzio per ricaricarsi.",
+        "reflection": "Come posso concedermi il riposo di cui ho bisogno?"
+    },
+    {
+        "id": 54,
+        "name": "Cinque di Spade",
+        "image": "assets/images/swords05.jpg",
+        "keywords": [
+            "Sconfitta",
+            "Tradimento",
+            "Conflitto",
+            "Vittoria vuota"
+        ],
+        "waite_meaning": "La degradazione, la distruzione e l'infamia.",
+        "modern_meaning": "Scegli le tue battaglie; a volte vincere a tutti i costi significa perdere qualcosa di più importante.",
+        "reflection": "Vale la pena vincere se perdo il rispetto degli altri?"
+    },
+    {
+        "id": 55,
+        "name": "Sei di Spade",
+        "image": "assets/images/swords06.jpg",
+        "keywords": [
+            "Transizione",
+            "Viaggio",
+            "Sollievo",
+            "Andare avanti"
+        ],
+        "waite_meaning": "Il viaggio per acqua e il percorso.",
+        "modern_meaning": "Ti stai muovendo verso acque più calme; lascia il passato turbolento alle spalle.",
+        "reflection": "Verso cosa mi sto dirigendo?"
+    },
+    {
+        "id": 56,
+        "name": "Sette di Spade",
+        "image": "assets/images/swords07.jpg",
+        "keywords": [
+            "Inganno",
+            "Strategia",
+            "Furtività",
+            "Segreti"
+        ],
+        "waite_meaning": "Il disegno, il tentativo e il desiderio.",
+        "modern_meaning": "Usa l'astuzia ma fai attenzione all'inganno; qualcuno (o tu stesso) potrebbe non essere del tutto onesto.",
+        "reflection": "Cosa sto cercando di nascondere o ottenere di nascosto?"
+    },
+    {
+        "id": 57,
+        "name": "Otto di Spade",
+        "image": "assets/images/swords08.jpg",
+        "keywords": [
+            "Restrizione",
+            "Vittimismo",
+            "Paura",
+            "Prigionia mentale"
+        ],
+        "waite_meaning": "La cattiva notizia e la crisi.",
+        "modern_meaning": "Ti senti in trappola, ma le sbarre sono mentali; cambia prospettiva per trovare la via d'uscita.",
+        "reflection": "Quali pensieri mi stanno limitando?"
+    },
+    {
+        "id": 58,
+        "name": "Nove di Spade",
+        "image": "assets/images/swords09.jpg",
+        "keywords": [
+            "Ansia",
+            "Incubo",
+            "Preoccupazione",
+            "Disperazione"
+        ],
+        "waite_meaning": "La morte, il fallimento e il ritardo.",
+        "modern_meaning": "Le tue paure sono peggiori della realtà; respira e cerca di razionalizzare ciò che ti preoccupa.",
+        "reflection": "Cosa mi tiene sveglio la notte?"
+    },
+    {
+        "id": 59,
+        "name": "Dieci di Spade",
+        "image": "assets/images/swords10.jpg",
+        "keywords": [
+            "Fine",
+            "Tradimento",
+            "Crisi",
+            "Rinascita"
+        ],
+        "waite_meaning": "Il dolore, l'afflizione e la tristezza.",
+        "modern_meaning": "Hai toccato il fondo, ma ora puoi solo risalire; accetta la fine per poter ricominciare.",
+        "reflection": "Cosa deve finire definitivamente perché io possa rinascere?"
+    },
+    {
+        "id": 60,
+        "name": "Fante di Spade",
+        "image": "assets/images/swords11.jpg",
+        "keywords": [
+            "Curiosità",
+            "Vigilanza",
+            "Nuove idee",
+            "Verità"
+        ],
+        "waite_meaning": "L'autorità, la sorveglianza e la spia.",
+        "modern_meaning": "Sii curioso e cerca la verità; comunica con chiarezza e aspettati notizie interessanti.",
+        "reflection": "Cosa ho bisogno di imparare o scoprire?"
+    },
+    {
+        "id": 61,
+        "name": "Cavaliere di Spade",
+        "image": "assets/images/swords12.jpg",
+        "keywords": [
+            "Ambizione",
+            "Azione",
+            "Impulsività",
+            "Determinazione"
+        ],
+        "waite_meaning": "L'abilità, il coraggio e la difesa.",
+        "modern_meaning": "Persegui i tuoi obiettivi con determinazione, ma non calpestare gli altri nella tua corsa.",
+        "reflection": "Sto agendo troppo in fretta senza pensare?"
+    },
+    {
+        "id": 62,
+        "name": "Regina di Spade",
+        "image": "assets/images/swords13.jpg",
+        "keywords": [
+            "Indipendenza",
+            "Chiarezza",
+            "Onestà",
+            "Giudizio"
+        ],
+        "waite_meaning": "La vedovanza, la tristezza e l'assenza.",
+        "modern_meaning": "Usa la tua intelligenza e la tua onestà; taglia via ciò che non è essenziale con grazia.",
+        "reflection": "Come posso essere onesto senza essere crudele?"
+    },
+    {
+        "id": 63,
+        "name": "Re di Spade",
+        "image": "assets/images/swords14.jpg",
+        "keywords": [
+            "Autorità",
+            "Verità",
+            "Logica",
+            "Giustizia"
+        ],
+        "waite_meaning": "Il giudizio, il potere e il comando.",
+        "modern_meaning": "Guida con la logica e la giustizia; la tua mente è il tuo strumento più potente.",
+        "reflection": "Sto prendendo decisioni basate sui fatti o sulle emozioni?"
+    },
+    {
+        "id": 64,
+        "name": "Asso di Denari",
+        "image": "assets/images/pents01.jpg",
+        "keywords": [
+            "Opportunità",
+            "Prosperità",
+            "Nuovo lavoro",
+            "Abbondanza"
+        ],
+        "waite_meaning": "La contentezza perfetta e la felicità.",
+        "modern_meaning": "Una nuova opportunità materiale o finanziaria; pianta il seme per un futuro prospero.",
+        "reflection": "Quale opportunità concreta devo cogliere?"
+    },
+    {
+        "id": 65,
+        "name": "Due di Denari",
+        "image": "assets/images/pents02.jpg",
+        "keywords": [
+            "Equilibrio",
+            "Adattabilità",
+            "Gestione",
+            "Priorità"
+        ],
+        "waite_meaning": "La gioia, la ricreazione e la notizia.",
+        "modern_meaning": "Mantieni l'equilibrio tra le varie sfere della tua vita; sii flessibile di fronte ai cambiamenti.",
+        "reflection": "Cosa sto cercando di bilanciare con fatica?"
+    },
+    {
+        "id": 66,
+        "name": "Tre di Denari",
+        "image": "assets/images/pents03.jpg",
+        "keywords": [
+            "Collaborazione",
+            "Maestria",
+            "Lavoro di squadra",
+            "Qualità"
+        ],
+        "waite_meaning": "Il mestiere, il commercio e la nobiltà.",
+        "modern_meaning": "Collabora con gli altri per creare qualcosa di duraturo; il tuo talento è riconosciuto.",
+        "reflection": "Come posso contribuire al meglio in un gruppo?"
+    },
+    {
+        "id": 67,
+        "name": "Quattro di Denari",
+        "image": "assets/images/pents04.jpg",
+        "keywords": [
+            "Controllo",
+            "Sicurezza",
+            "Avarizia",
+            "Stabilità"
+        ],
+        "waite_meaning": "La sicurezza del possesso e il dono.",
+        "modern_meaning": "Non aggrapparti troppo ai beni materiali; la vera sicurezza viene dalla flessibilità, non dal controllo.",
+        "reflection": "Di cosa ho paura di perdere il controllo?"
+    },
+    {
+        "id": 68,
+        "name": "Cinque di Denari",
+        "image": "assets/images/pents05.jpg",
+        "keywords": [
+            "Mancanza",
+            "Isolamento",
+            "Difficoltà",
+            "Aiuto"
+        ],
+        "waite_meaning": "Il disordine materiale e la povertà.",
+        "modern_meaning": "Stai attraversando un momento difficile, ma non sei solo; chiedi aiuto e non isolarti.",
+        "reflection": "A chi posso chiedere aiuto in questo momento?"
+    },
+    {
+        "id": 69,
+        "name": "Sei di Denari",
+        "image": "assets/images/pents06.jpg",
+        "keywords": [
+            "Generosità",
+            "Condivisione",
+            "Carità",
+            "Equilibrio"
+        ],
+        "waite_meaning": "Il presente, il dono e la gratificazione.",
+        "modern_meaning": "Dai e ricevi con equilibrio; la generosità crea un flusso positivo nella tua vita.",
+        "reflection": "Sto dando troppo o troppo poco?"
+    },
+    {
+        "id": 70,
+        "name": "Sette di Denari",
+        "image": "assets/images/pents07.jpg",
+        "keywords": [
+            "Pazienza",
+            "Valutazione",
+            "Attesa",
+            "Investimento"
+        ],
+        "waite_meaning": "Il denaro, gli affari e il baratto.",
+        "modern_meaning": "Hai lavorato sodo, ora aspetta i frutti; valuta se sei sulla strada giusta.",
+        "reflection": "I miei sforzi stanno portando i risultati sperati?"
+    },
+    {
+        "id": 71,
+        "name": "Otto di Denari",
+        "image": "assets/images/pents08.jpg",
+        "keywords": [
+            "Dedizione",
+            "Apprendimento",
+            "Dettagli",
+            "Maestria"
+        ],
+        "waite_meaning": "Il lavoro, l'impiego e la commissione.",
+        "modern_meaning": "Concentrati sui dettagli e affina le tue abilità; il duro lavoro porterà all'eccellenza.",
+        "reflection": "In quale abilità voglio diventare maestro?"
+    },
+    {
+        "id": 72,
+        "name": "Nove di Denari",
+        "image": "assets/images/pents09.jpg",
+        "keywords": [
+            "Indipendenza",
+            "Lusso",
+            "Autosufficienza",
+            "Successo"
+        ],
+        "waite_meaning": "La prudenza, la sicurezza e il successo.",
+        "modern_meaning": "Goditi i frutti del tuo lavoro in autonomia; sei arrivato a un punto di stabilità e benessere.",
+        "reflection": "Come posso godermi di più i miei successi?"
+    },
+    {
+        "id": 73,
+        "name": "Dieci di Denari",
+        "image": "assets/images/pents10.jpg",
+        "keywords": [
+            "Eredità",
+            "Famiglia",
+            "Ricchezza",
+            "Tradizione"
+        ],
+        "waite_meaning": "Il guadagno, la ricchezza e la famiglia.",
+        "modern_meaning": "Stabilità a lungo termine e benessere familiare; costruisci qualcosa che duri nel tempo.",
+        "reflection": "Quale eredità voglio lasciare?"
+    },
+    {
+        "id": 74,
+        "name": "Fante di Denari",
+        "image": "assets/images/pents11.jpg",
+        "keywords": [
+            "Studio",
+            "Opportunità",
+            "Praticità",
+            "Inizio"
+        ],
+        "waite_meaning": "L'applicazione, lo studio e la riflessione.",
+        "modern_meaning": "Un'opportunità concreta di imparare o guadagnare; approccia tutto con mentalità pratica.",
+        "reflection": "Cosa sono pronto a imparare oggi?"
+    },
+    {
+        "id": 75,
+        "name": "Cavaliere di Denari",
+        "image": "assets/images/pents12.jpg",
+        "keywords": [
+            "Costanza",
+            "Lavoro duro",
+            "Affidabilità",
+            "Routine"
+        ],
+        "waite_meaning": "L'utilità, l'interesse e la responsabilità.",
+        "modern_meaning": "Procedi con calma e costanza; l'affidabilità è la tua arma vincente.",
+        "reflection": "Sto procedendo con la giusta costanza verso i miei obiettivi?"
+    },
+    {
+        "id": 76,
+        "name": "Regina di Denari",
+        "image": "assets/images/pents13.jpg",
+        "keywords": [
+            "Cura",
+            "Abbondanza",
+            "Praticità",
+            "Natura"
+        ],
+        "waite_meaning": "L'opulenza, la generosità e la magnificenza.",
+        "modern_meaning": "Prenditi cura del tuo mondo materiale e del tuo corpo; coltiva l'abbondanza con amore.",
+        "reflection": "Come posso portare più comfort nella mia vita?"
+    },
+    {
+        "id": 77,
+        "name": "Re di Denari",
+        "image": "assets/images/pents14.jpg",
+        "keywords": [
+            "Ricchezza",
+            "Sicurezza",
+            "Successo",
+            "Ambizione"
+        ],
+        "waite_meaning": "Il valore, la realizzazione e l'intelligenza.",
+        "modern_meaning": "Hai il tocco di Mida; gestisci le tue risorse con saggezza e goditi la prosperità.",
+        "reflection": "Come sto gestendo le mie risorse e il mio potere?"
     }
 ]

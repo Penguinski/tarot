@@ -2,115 +2,148 @@ let deck = [];
 let currentSpread = '';
 let userQuestion = '';
 let userCategory = 'Generale';
+let totalCardsNeeded = 0;
+let cardsDrawn = 0;
+let shuffledDeck = [];
 
-// Variabili di stato per la lettura
-let shuffledDeck = [];     // Il mazzo mescolato per questa sessione
-let cardsDrawn = 0;        // Quante ne ho pescate finora
-let totalCardsNeeded = 0;  // Quante ne devo pescare in totale (1 o 3)
-let spreadPositions = [];  // Le etichette (es. "Passato", "Presente")
-
+// Carica Dati
 async function loadDeck() {
     try {
         const response = await fetch('tarot_data.json');
         deck = await response.json();
-    } catch (e) { alert("Errore caricamento."); }
+    } catch (e) { console.error("No JSON"); }
 }
 loadDeck();
 
-// --- NAVIGAZIONE ---
-function showScreen(screenId) {
+// --- UI MANAGERS ---
+function selectCategory(btnElement, category) {
+    userCategory = category;
+    // Rimuovi 'selected' da tutti i bottoni
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('selected'));
+    // Aggiungi a quello cliccato
+    btnElement.classList.add('selected');
+}
+
+function showScreen(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(screenId).classList.add('active');
+    document.getElementById(id).classList.add('active');
 }
 
-function goHome() {
-    showScreen('screen-home');
-}
+function goHome() { showScreen('screen-home'); }
+function goToInput(type) { currentSpread = type; showScreen('screen-input'); }
 
-function goToInput(spreadType) {
-    currentSpread = spreadType;
-    showScreen('screen-input');
-}
-
-// --- AVVIO SESSIONE ---
+// --- LOGICA LETTURA ---
 function startReading() {
     userQuestion = document.getElementById('user-question').value;
-    userCategory = document.getElementById('user-category').value;
-
-    // 1. Resetta variabili
+    shuffledDeck = [...deck].sort(() => 0.5 - Math.random());
     cardsDrawn = 0;
-    shuffledDeck = [...deck].sort(() => 0.5 - Math.random()); // Mescola
-    document.getElementById('cards-carousel').innerHTML = ""; // Pulisci tavolo
 
-    // 2. Imposta regole in base al tipo di lettura
-    if (currentSpread === 'one-card') {
-        totalCardsNeeded = 1;
-        spreadPositions = ["La Risposta"];
-    } else if (currentSpread === 'three-cards') {
-        totalCardsNeeded = 3;
-        spreadPositions = ["Il Passato / L'Origine", "Il Presente / L'Azione", "Il Futuro / L'Esito"];
-    }
+    // Imposta quante carte servono
+    totalCardsNeeded = (currentSpread === 'three-cards') ? 3 : 1;
 
-    // 3. Prepara interfaccia
-    document.getElementById('deck-container').style.display = 'block'; // Mostra mazzo
-    document.getElementById('cards-carousel').style.display = 'none'; // Nascondi carte
-    document.getElementById('reading-status').innerText = `Pesca la carta 1 di ${totalCardsNeeded}`;
+    // Pulisci il carosello
+    const container = document.getElementById('carousel-container');
+    container.innerHTML = '';
+
+    // Aggiungi il primo elemento: IL MAZZO COPERTO
+    addDeckSlide(container);
 
     showScreen('screen-reading');
+    updateStatus();
 }
 
-// --- CUORE DEL RITUALE: PESCA UNA CARTA ALLA VOLTA ---
-function drawNextCard() {
-    if (cardsDrawn >= totalCardsNeeded) return; // Finito
+function updateStatus() {
+    const text = cardsDrawn < totalCardsNeeded
+        ? `PESCA LA CARTA ${cardsDrawn + 1} DI ${totalCardsNeeded}`
+        : "LETTURA COMPLETATA";
+    document.getElementById('reading-step').innerText = text;
+}
 
-    // 1. Dati della carta
+// Crea la slide con il mazzo coperto
+function addDeckSlide(container) {
+    const div = document.createElement('div');
+    div.className = 'slide slide-active'; // Parte attivo
+    div.id = 'deck-slide';
+    div.innerHTML = `
+        <div class="card-back-pattern" onclick="revealNextCard()">
+            ✦
+        </div>
+        <div style="margin-top:20px; color:#666; font-size:0.8rem">TOCCA PER PESCARE</div>
+    `;
+    container.appendChild(div);
+
+    // Scrolla subito su di lui
+    div.scrollIntoView({ behavior: "smooth", inline: "center" });
+}
+
+// Quando clicchi sul mazzo
+function revealNextCard() {
+    if (cardsDrawn >= totalCardsNeeded) return;
+
+    const container = document.getElementById('carousel-container');
+
+    // 1. Rimuovi il mazzo (o spostalo in fondo? Meglio sostituirlo per la UX clean)
+    // Se vuoi vedere la carta "uscire", aggiungiamo la carta DOPO il mazzo, e poi spostiamo il mazzo in fondo.
+
     const card = shuffledDeck[cardsDrawn];
-    const positionName = spreadPositions[cardsDrawn];
+    const positionNames = currentSpread === 'three-cards'
+        ? ["PASSATO", "PRESENTE", "FUTURO"]
+        : ["RISPOSTA"];
 
-    // 2. Nascondi mazzo se è la prima carta, o mantienilo se serve spazio?
-    // Strategia: Quando peschi, il carosello appare. Se devi pescarne altre,
-    // il mazzo rimane accessibile o aggiungiamo un bottone "pesca ancora"?
-    // PER SEMPLICITÀ: Nascondiamo il mazzo e lo facciamo riapparire in fondo al carosello? 
-    // NO, MEGLIO: Quando clicchi il mazzo, aggiungiamo la carta al carosello e scrolliamo lì.
-
-    const carousel = document.getElementById('cards-carousel');
-    carousel.style.display = 'flex'; // Assicurati che sia visibile
-    document.getElementById('deck-container').style.display = 'none'; // Nascondi mazzo temporaneamente
-
-    // 3. Crea HTML Carta
-    const cardHTML = `
-        <div class="tarot-card-display">
-            <span class="position-label">✦ ${positionName}</span>
-            <h2 class="card-name">${card.name}</h2>
-            <img class="card-img-result" src="${card.image}" alt="${card.name}">
-            <div class="meaning-text">
-                ${card.modern_meaning}
-                <br><br>
-                <em style="color:#c5a059; font-size:0.9em">"${card.reflection}"</em>
-            </div>
-            ${cardsDrawn < totalCardsNeeded - 1 ?
-            `<button onclick="prepareNextDraw()" style="margin-top:20px;">Pesca la prossima ➝</button>` :
-            `<div style="margin-top:20px; color:#666; font-size:0.8em">Lettura Completata</div>`
-        }
+    // Crea la slide della carta
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    slide.innerHTML = `
+        <div class="label" style="color:#666; margin-bottom:10px; font-size:0.8rem;">${positionNames[cardsDrawn]}</div>
+        <img class="card-visual" src="${card.image}" alt="${card.name}">
+        <div class="meaning-content">
+            <h3>${card.name}</h3>
+            <p>${card.modern_meaning}</p>
+            <span class="reflection">${card.reflection}</span>
         </div>
     `;
 
-    // 4. Inserisci e Scrolla
-    carousel.insertAdjacentHTML('beforeend', cardHTML);
+    // Inserisci la carta PRIMA del mazzo (che è l'ultimo elemento)
+    const deckSlide = document.getElementById('deck-slide');
+    container.insertBefore(slide, deckSlide);
 
-    // Incrementa contatore
     cardsDrawn++;
+    updateStatus();
 
-    // Scrolla verso la nuova carta
-    const newCard = carousel.lastElementChild;
-    setTimeout(() => {
-        newCard.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-    }, 100);
+    // Focus sulla nuova carta
+    slide.scrollIntoView({ behavior: "smooth", inline: "center" });
+
+    // Animazione di attivazione classe
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('slide-active'));
+    slide.classList.add('slide-active');
+
+    // Se abbiamo finito, nascondi il mazzo
+    if (cardsDrawn >= totalCardsNeeded) {
+        deckSlide.style.display = 'none';
+    } else {
+        // Se mancano carte, lascia il mazzo lì a destra, così l'utente scorre per pescare ancora
+        deckSlide.scrollIntoView({ behavior: "smooth", inline: "center" }); // Ops, no, rimaniamo sulla carta appena pescata per leggerla!
+
+        // Logica migliorata: Rimani sulla carta letta. L'utente vedrà "spuntare" il mazzo a destra e scorrerà quando è pronto.
+        setTimeout(() => {
+            // Piccolo trucco per evidenziare che c'è altro a destra
+            deckSlide.classList.remove('slide-active');
+        }, 100);
+    }
 }
 
-// Funzione per tornare a mostrare il mazzo per la prossima carta
-function prepareNextDraw() {
-    document.getElementById('deck-container').style.display = 'block';
-    document.getElementById('cards-carousel').style.display = 'none';
-    document.getElementById('reading-status').innerText = `Pesca la carta ${cardsDrawn + 1} di ${totalCardsNeeded}`;
-}
+// Gestione dell'effetto "Focus" durante lo scroll manuale
+document.getElementById('carousel-container').addEventListener('scroll', () => {
+    const container = document.getElementById('carousel-container');
+    const center = container.scrollLeft + (container.offsetWidth / 2);
+
+    document.querySelectorAll('.slide').forEach(slide => {
+        const slideCenter = slide.offsetLeft + (slide.offsetWidth / 2);
+        const dist = Math.abs(center - slideCenter);
+        if (dist < 100) {
+            slide.classList.add('slide-active');
+        } else {
+            slide.classList.remove('slide-active');
+        }
+    });
+});

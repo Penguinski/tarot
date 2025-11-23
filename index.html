@@ -7,255 +7,234 @@
     <title>Tarocchi</title>
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#0a0a0a">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #050505;
-            /* Nero quasi assoluto */
-            --card-bg: #111;
+            --bg: #080808;
+            --surface: #121212;
             --gold: #c5a059;
-            /* Un oro più spento/antico */
-            --text-main: #d0d0d0;
+            --gold-dim: #6b5a35;
+            --text: #e0e0e0;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg);
+            color: var(--text);
             font-family: 'Cormorant Garamond', serif;
-            /* Testo corpo elegante */
             margin: 0;
             padding: 0;
-            text-align: center;
             height: 100vh;
+            overflow: hidden;
+            /* Niente scroll generale */
             display: flex;
             flex-direction: column;
-            overflow: hidden;
-            /* Blocchiamo lo scroll generale */
         }
 
-        /* --- STILE ARCANO --- */
         h1,
         h2,
         button,
-        .position-label {
+        .label {
             font-family: 'Cinzel', serif;
-            /* Font dei titoli */
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        h1 {
-            color: var(--gold);
-            font-size: 2rem;
-            margin-top: 30px;
-            border-bottom: 1px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        /* Gestione Schermate */
+        /* --- SCHERMATE --- */
         .screen {
             display: none;
             width: 100%;
             height: 100%;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            /* Centra tutto verticalmente */
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto;
-            /* Permette scroll verticale se serve */
+            animation: fadeIn 0.5s ease;
         }
 
         .active {
             display: flex;
         }
 
-        /* Bottoni Arcani */
-        button {
+        /* --- INPUT E CATEGORIE (NUOVO DESIGN) --- */
+        textarea {
             background: transparent;
-            border: 1px solid var(--gold);
+            border: none;
+            border-bottom: 1px solid var(--gold-dim);
             color: var(--gold);
-            padding: 15px 30px;
-            font-size: 14px;
-            margin-bottom: 15px;
-            cursor: pointer;
             width: 100%;
-            max-width: 300px;
-            transition: 0.3s;
-            position: relative;
+            max-width: 320px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 30px;
+            outline: none;
+            resize: none;
         }
 
-        button:active {
+        textarea::placeholder {
+            color: #444;
+            font-style: italic;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            max-width: 320px;
+            margin-bottom: 40px;
+        }
+
+        .cat-btn {
+            background: var(--surface);
+            border: 1px solid #333;
+            color: #666;
+            padding: 20px 10px;
+            border-radius: 4px;
+            /* Angoli poco smussati */
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        /* Stato Selezionato */
+        .cat-btn.selected {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(197, 160, 89, 0.05);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.1);
+        }
+
+        /* Bottone Principale */
+        .cta-btn {
             background: var(--gold);
             color: #000;
-        }
-
-        /* Input Fields */
-        input,
-        select,
-        textarea {
-            background: var(--card-bg);
-            border: 1px solid #333;
-            color: var(--gold);
-            padding: 15px;
-            width: 100%;
-            max-width: 300px;
-            font-family: 'Cinzel', serif;
-            margin-bottom: 20px;
-            outline: none;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: var(--gold);
-        }
-
-        /* --- IL MAZZO E LA PESCA --- */
-        #deck-area {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        .deck-stack {
-            width: 180px;
-            height: 300px;
-            background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 5px, #222 5px, #222 10px);
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.1);
-            position: relative;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-weight: bold;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            /* Forma un po' obliqua */
             transition: transform 0.2s;
         }
 
-        .deck-stack:active {
+        .cta-btn:active {
             transform: scale(0.95);
         }
 
-        .deck-stack::before {
-            content: "✦";
-            font-size: 50px;
-            color: var(--gold);
-            opacity: 0.5;
-        }
-
-        /* --- CAROUSEL ORIZZONTALE (LA MAGIA) --- */
-        #cards-carousel {
+        /* --- AREA LETTURA (CAROUSEL CENTRATO) --- */
+        /* Il contenitore che tiene le carte */
+        #carousel-container {
+            width: 100%;
+            height: 100%;
             display: flex;
+            align-items: center;
+            /* Centra verticalmente */
             overflow-x: auto;
             /* Scroll orizzontale */
             scroll-snap-type: x mandatory;
-            /* Scatto magnetico */
-            width: 100%;
-            height: 100%;
-            gap: 20px;
-            padding-bottom: 50px;
-            /* Spazio per scrollbar invisibile */
-            align-items: flex-start;
-            /* Allinea in alto */
+            -webkit-overflow-scrolling: touch;
+            padding-left: 50vw;
+            /* Trucco per centrare il primo elemento */
+            padding-right: 50vw;
+            /* Trucco per centrare l'ultimo elemento */
+            box-sizing: border-box;
+            /* Nascondiamo la barra di scorrimento */
+            scrollbar-width: none;
         }
 
-        /* Nascondi scrollbar brutta */
-        #cards-carousel::-webkit-scrollbar {
+        #carousel-container::-webkit-scrollbar {
             display: none;
         }
 
-        /* La singola carta nel carousel */
-        .tarot-card-display {
-            flex: 0 0 85vw;
-            /* Occupa l'85% della larghezza schermo */
+        /* La singola slide (Mazzo o Carta) */
+        .slide {
+            flex: 0 0 300px;
+            /* Larghezza fissa per ogni "scheda" */
             scroll-snap-align: center;
-            /* Si ferma al centro */
-            background: var(--card-bg);
-            border: 1px solid #333;
-            padding: 20px;
-            box-sizing: border-box;
-            border-radius: 2px;
-            /* Angoli poco arrotondati, più severi */
             display: flex;
             flex-direction: column;
-            animation: slideInRight 0.5s ease;
-            margin-top: 20px;
-            border-top: 3px solid var(--gold);
-            /* Dettaglio di stile */
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+            /* Spazio tra le carte */
+            opacity: 0.5;
+            /* Sbiadite se non sono al centro */
+            transform: scale(0.9);
+            transition: all 0.3s ease;
         }
 
-        .card-img-result {
+        /* Classe aggiunta via JS all'elemento centrale */
+        .slide-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Stile della Carta */
+        .card-visual {
             width: 100%;
-            max-height: 400px;
-            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
-            filter: sepia(20%) contrast(110%);
-            /* Filtro leggero per uniformare */
             border: 1px solid #333;
         }
 
-        .meaning-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            text-align: left;
-            border-left: 1px solid var(--gold);
-            padding-left: 15px;
-            margin-top: 10px;
+        .card-back-pattern {
+            width: 100%;
+            height: 450px;
+            /* Altezza fissa per coerenza */
+            background: repeating-linear-gradient(45deg, #111, #111 10px, #1a1a1a 10px, #1a1a1a 20px);
+            border: 2px solid var(--gold-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--gold-dim);
+            cursor: pointer;
         }
 
-        .position-label {
-            color: #666;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-            display: block;
+        .meaning-content {
+            text-align: center;
+            max-width: 280px;
         }
 
-        .card-name {
+        .meaning-content h3 {
             color: var(--gold);
+            margin: 0 0 10px 0;
             font-size: 1.5rem;
-            margin: 5px 0 15px 0;
         }
 
-        @keyframes slideInRight {
+        .meaning-content p {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #ccc;
+        }
+
+        .meaning-content .reflection {
+            color: var(--gold);
+            font-style: italic;
+            margin-top: 15px;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
             from {
-                opacity: 0;
-                transform: translateX(50px);
+                opacity: 0
             }
 
             to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Istruzione visiva per pescare */
-        #tap-hint {
-            margin-top: 20px;
-            color: #666;
-            font-size: 0.9rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 0.5;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0.5;
+                opacity: 1
             }
         }
     </style>
@@ -264,53 +243,52 @@
 <body>
 
     <div id="screen-home" class="screen active">
-        <h1>EMERALD SUN</h1>
-        <p style="font-style: italic; color: #666;">Tarocchi Intuitivi</p>
-        <br>
-        <button onclick="goToInput('one-card')">✦ Lettura Singola</button>
-        <button onclick="goToInput('three-cards')">✦ Tre Carte (Tempo)</button>
-        <button onclick="alert('Presto disponibile')">✦ Croce Celtica</button>
+        <h1 style="border-bottom: 1px solid var(--gold); padding-bottom:10px;">Emerald Sun</h1>
+        <br><br>
+        <button class="cat-btn" style="width:200px; margin-bottom:15px;" onclick="goToInput('one-card')">Carta
+            Singola</button>
+        <button class="cat-btn" style="width:200px;" onclick="goToInput('three-cards')">Passato • Presente •
+            Futuro</button>
     </div>
 
     <div id="screen-input" class="screen">
-        <button onclick="goHome()" style="border:none; color:#666; width:auto; align-self:flex-start">←
-            Indietro</button>
-        <h2>L'Intento</h2>
-        <textarea id="user-question" rows="3" placeholder="Scrivi qui la tua domanda o lascia vuoto..."></textarea>
-        <select id="user-category">
-            <option value="Generale">Generale</option>
-            <option value="Amore">Amore</option>
-            <option value="Lavoro">Lavoro</option>
-            <option value="Spirito">Spirito</option>
-        </select>
-        <button onclick="startReading()">Procedi al Tavolo</button>
+        <button onclick="goHome()"
+            style="background:none; border:none; color:#444; position:absolute; top:20px; left:20px;">←
+            INDIETRO</button>
+
+        <h2 style="color:#666; font-size:0.9rem;">Il tuo intento</h2>
+        <textarea id="user-question" rows="1" placeholder="Su cosa ti stai concentrando?"></textarea>
+
+        <h2 style="color:#666; font-size:0.9rem; margin-top:20px;">Ambito</h2>
+        <div class="category-grid">
+            <button class="cat-btn selected" onclick="selectCategory(this, 'Generale')">Generale</button>
+            <button class="cat-btn" onclick="selectCategory(this, 'Amore')">Amore</button>
+            <button class="cat-btn" onclick="selectCategory(this, 'Lavoro')">Lavoro</button>
+            <button class="cat-btn" onclick="selectCategory(this, 'Spirito')">Spirito</button>
+        </div>
+
+        <button class="cta-btn" onclick="startReading()">APRI IL MAZZO</button>
     </div>
 
-    <div id="screen-reading" class="screen" style="padding:0;">
+    <div id="screen-reading" class="screen"
+        style="padding:0; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);">
 
-        <div
-            style="padding: 10px; width:100%; border-bottom: 1px solid #222; background:rgba(0,0,0,0.8); z-index:10; display:flex; justify-content:space-between; align-items:center;">
-            <span id="reading-status" style="font-family:'Cinzel'; color:var(--gold); font-size:0.9rem;">Tocca il
-                mazzo</span>
+        <div style="position:absolute; top:20px; width:100%; text-align:center; z-index:10;">
+            <span id="reading-step"
+                style="font-family:'Cinzel'; color:#444; font-size:0.8rem; letter-spacing:3px;">PREPARAZIONE</span>
+        </div>
+
+        <div id="carousel-container">
+        </div>
+
+        <div style="position:absolute; bottom:30px; width:100%; text-align:center; z-index:10;">
             <button onclick="goHome()"
-                style="width:auto; padding:5px 10px; font-size:0.8rem; margin:0; border-color:#333;">X</button>
-        </div>
-
-        <div id="reading-area"
-            style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden;">
-
-            <div id="deck-container" style="text-align:center;">
-                <div class="deck-stack" onclick="drawNextCard()"></div>
-                <div id="tap-hint">Tocca per pescare</div>
-            </div>
-
-            <div id="cards-carousel" style="display:none;">
-            </div>
-
+                style="background:none; border:none; color:#444; font-size:0.8rem; cursor:pointer">CHIUDI
+                LETTURA</button>
         </div>
     </div>
 
-    <script src="app.js?v=4"></script>
+    <script src="app.js?v=6"></script>
 </body>
 
 </html>
