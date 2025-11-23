@@ -14,8 +14,6 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
     <style>
         :root {
             --bg: #050505;
@@ -130,20 +128,36 @@
             will-change: transform;
         }
 
-        /* --- BIBLIOTECA --- */
+        /* --- BIBLIOTECA (FIXED) --- */
         #screen-library {
-            align-items: flex-start;
+            align-items: center;
             padding: 0;
+            overflow: hidden;
+        }
+
+        .library-header {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg);
+            z-index: 10;
         }
 
         .library-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 5px;
-            padding: 10px;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 Colonne per stare comodi */
+            gap: 10px;
+            padding: 10px 20px 80px 20px;
+            /* Padding laterale e inferiore */
             width: 100%;
+            box-sizing: border-box;
+            /* Importante per non strabordare */
             overflow-y: auto;
-            padding-bottom: 50px;
+            max-width: 500px;
+            /* Limite larghezza su desktop */
         }
 
         .lib-card-thumb {
@@ -155,6 +169,7 @@
             border: 1px solid #333;
             opacity: 0.7;
             transition: opacity 0.2s;
+            cursor: pointer;
         }
 
         .lib-card-thumb:hover {
@@ -241,7 +256,7 @@
             }
         }
 
-        /* --- READING LAYOUT --- */
+        /* --- READING LAYOUT (FIXED) --- */
         #screen-reading {
             display: none;
             flex-direction: column;
@@ -268,11 +283,13 @@
             width: 100%;
             display: flex;
             align-items: center;
+            /* CENTRATURA VERTICALE */
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding-left: 50vw;
             padding-right: 50vw;
             scrollbar-width: none;
+            box-sizing: border-box;
         }
 
         .reading-footer {
@@ -282,26 +299,27 @@
             text-align: center;
             z-index: 20;
             background: linear-gradient(to top, #000 20%, transparent);
-            display: flex;
-            justify-content: center;
-            gap: 15px;
         }
 
         .slide {
             flex: 0 0 85vw;
+            /* Larghezza mobile */
             max-width: 350px;
             scroll-snap-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
+            /* CENTRATURA INTERNA */
             margin: 0 10px;
             opacity: 0.4;
             transform: scale(0.9);
             transition: all 0.4s;
             position: relative;
-            height: 100%;
-            max-height: 75vh;
+            height: auto;
+            /* Lascia che il contenuto definisca l'altezza */
+            min-height: 60%;
+            /* Altezza minima */
         }
 
         .slide-active {
@@ -314,8 +332,10 @@
             width: 100%;
             overflow-y: auto;
             padding: 0 5px;
+            max-height: 30vh;
         }
 
+        /* Limite scroll testo */
         .meaning-content h3 {
             color: var(--gold);
             margin: 0 0 5px 0;
@@ -353,21 +373,16 @@
             border-radius: 6px;
         }
 
-        .action-btn {
+        .close-reading-btn {
             background: rgba(0, 0, 0, 0.9);
             border: 1px solid var(--gold-dim);
             color: var(--gold);
-            padding: 12px 20px;
+            padding: 12px 35px;
             border-radius: 30px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .share-btn {
-            border-color: #fff;
-            color: #fff;
+            letter-spacing: 2px;
         }
 
         #scroll-hint {
@@ -444,7 +459,7 @@
     </div>
 
     <div id="screen-library" class="screen">
-        <div style="width:100%; padding:20px; display:flex; justify-content:space-between; align-items:center;">
+        <div class="library-header">
             <button onclick="goHome()"
                 style="background:none; border:none; color:var(--gold); font-size:1.5rem;">←</button>
             <h2 style="margin:0; font-size:1rem;">Il Grimorio</h2>
@@ -470,10 +485,7 @@
             <button class="cat-btn" onclick="selectCategory(this, 'Lavoro')">Lavoro</button>
             <button class="cat-btn" onclick="selectCategory(this, 'Spirito')">Spirito</button>
         </div>
-        <div style="margin-bottom:20px; color:#666; font-size:0.9rem; display:flex; align-items:center; gap:10px;">
-            <input type="checkbox" id="allow-reversed" style="width:auto; margin:0;">
-            <label for="allow-reversed" style="font-family:'Cormorant Garamond'">Includi carte rovesciate</label>
-        </div>
+
         <button class="cta-btn" onclick="startReading()">APRI IL MAZZO</button>
     </div>
 
@@ -494,12 +506,11 @@
         <div id="scroll-hint">→</div>
         <div id="carousel-container"></div>
         <div class="reading-footer">
-            <button onclick="takeScreenshot()" class="action-btn share-btn">SCATTA 📸</button>
-            <button onclick="goHome()" class="action-btn">CHIUDI</button>
+            <button onclick="goHome()" class="close-reading-btn">CHIUDI LETTURA</button>
         </div>
     </div>
 
-    <script src="app.js?v=12"></script>
+    <script src="app.js?v=13"></script>
 </body>
 
 </html>

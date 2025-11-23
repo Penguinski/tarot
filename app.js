@@ -4,7 +4,6 @@ let userQuestion = '';
 let totalCardsNeeded = 0;
 let cardsDrawn = 0;
 let shuffledDeck = [];
-let allowReversed = false;
 
 // Carica Dati
 async function loadDeck() {
@@ -54,6 +53,7 @@ function openLibrary() {
 
 function showCardDetail(card) {
     const overlay = document.getElementById('card-overlay');
+    // Logica per mostrare descrizione anche qui
     overlay.innerHTML = `
         <img src="${card.image}" style="max-height:50vh; border-radius:10px; box-shadow:0 0 30px rgba(0,0,0,0.8); margin-bottom:20px;">
         <h2 style="color:#c5a059; margin-bottom:5px;">${card.name}</h2>
@@ -68,11 +68,10 @@ function closeOverlay() { document.getElementById('card-overlay').style.display 
 // --- LETTURA ---
 function startReading() {
     userQuestion = document.getElementById('user-question').value;
-    allowReversed = document.getElementById('allow-reversed').checked;
 
     showScreen('screen-shuffle');
 
-    // JUMPER CARD CHECK (5% di probabilità)
+    // JUMPER CARD (5%)
     const isJumper = Math.random() < 0.05;
 
     shuffledDeck = shuffleDeck([...deck]);
@@ -89,7 +88,6 @@ function startReading() {
     setTimeout(() => {
         if (isJumper) {
             alert("Un'energia ha insistito per manifestarsi...");
-            // Non cambia la logica, ma crea atmosfera prima di entrare
         }
         showScreen('screen-reading');
         updateStatus();
@@ -121,11 +119,10 @@ function revealNextCard() {
     const container = document.getElementById('carousel-container');
     const rawCard = shuffledDeck[cardsDrawn];
 
-    // Logica Rovesciata
-    const isReversed = allowReversed && Math.random() < 0.5;
+    // Logica Rovesciata (Sempre attiva al 50%)
+    const isReversed = Math.random() < 0.5;
 
-    // Se rovesciata, usa il significato alternativo (se esiste), altrimenti avvisa
-    const meaning = isReversed ? (rawCard.reversed_meaning || "Significato rovesciato in arrivo...") : rawCard.modern_meaning;
+    const meaning = isReversed ? (rawCard.reversed_meaning || rawCard.modern_meaning) : rawCard.modern_meaning;
     const visualClass = isReversed ? "card-visual reversed-img" : "card-visual";
     const revLabel = isReversed ? `<span class="rev-label">⚡ ROVESCIATA</span>` : "";
 
@@ -152,6 +149,7 @@ function revealNextCard() {
     cardsDrawn++;
     updateStatus();
 
+    // Focus e reset classi
     slide.scrollIntoView({ behavior: "smooth", inline: "center" });
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('slide-active'));
     slide.classList.add('slide-active');
@@ -173,7 +171,7 @@ function showScrollHint() {
 function hideScrollHint() { document.getElementById('scroll-hint').style.display = 'none'; }
 
 
-// --- PARALLAX EFFECT 3D (Sottile) ---
+// --- PARALLAX EFFECT 3D ---
 document.addEventListener('mousemove', (e) => {
     const activeSlide = document.querySelector('.slide-active .card-visual');
     if (!activeSlide) return;
@@ -183,17 +181,3 @@ document.addEventListener('mousemove', (e) => {
 
     activeSlide.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
-// Versione Mobile (Giroscopio simulato da tocco o base)
-// Nota: Accedere al vero giroscopio richiede permessi HTTPS e click utente, 
-// per ora usiamo un effetto base legato allo scroll del carosello che è già incluso nel CSS.
-
-// --- SCREENSHOT ---
-function takeScreenshot() {
-    const element = document.getElementById('screen-reading');
-    html2canvas(element).then(canvas => {
-        const link = document.createElement('a');
-        link.download = 'tarocchi-lettura.jpg';
-        link.href = canvas.toDataURL();
-        link.click();
-    });
-}
