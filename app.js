@@ -48,7 +48,11 @@ function startReading() {
 
     shuffledDeck = shuffleDeck([...deck]);
     cardsDrawn = 0;
-    totalCardsNeeded = (currentSpread === 'three-cards') ? 3 : 1;
+
+    // DEFINIZIONE DEL NUMERO DI CARTE
+    if (currentSpread === 'one-card') totalCardsNeeded = 1;
+    else if (currentSpread === 'three-cards') totalCardsNeeded = 3;
+    else if (currentSpread === 'celtic-cross') totalCardsNeeded = 10;
 
     const container = document.getElementById('carousel-container');
     container.innerHTML = '';
@@ -87,9 +91,27 @@ function revealNextCard() {
     const container = document.getElementById('carousel-container');
     const card = shuffledDeck[cardsDrawn];
 
-    const positionNames = currentSpread === 'three-cards'
-        ? ["IL PASSATO", "IL PRESENTE", "IL FUTURO"]
-        : ["LA RISPOSTA"];
+    // GESTIONE DEI NOMI DELLE POSIZIONI
+    let positionNames = [];
+
+    if (currentSpread === 'one-card') {
+        positionNames = ["LA RISPOSTA"];
+    } else if (currentSpread === 'three-cards') {
+        positionNames = ["IL PASSATO", "IL PRESENTE", "IL FUTURO"];
+    } else if (currentSpread === 'celtic-cross') {
+        positionNames = [
+            "1. IL PRESENTE (La Situazione)",
+            "2. L'OSTACOLO (Ciò che incrocia)",
+            "3. IL FONDAMENTO (Le radici)",
+            "4. IL PASSATO RECENTE",
+            "5. IL POTENZIALE (L'obiettivo)",
+            "6. IL FUTURO PROSSIMO",
+            "7. TU (L'Atteggiamento)",
+            "8. L'AMBIENTE ESTERNO",
+            "9. SPERANZE E PAURE",
+            "10. L'ESITO FINALE"
+        ];
+    }
 
     const slide = document.createElement('div');
     slide.className = 'slide';
