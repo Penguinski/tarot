@@ -7,221 +7,256 @@
     <title>Tarocchi</title>
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#1a1a1a">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <style>
+        :root {
+            --bg-color: #050505;
+            /* Nero quasi assoluto */
+            --card-bg: #111;
+            --gold: #c5a059;
+            /* Un oro più spento/antico */
+            --text-main: #d0d0d0;
+        }
+
         body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Cormorant Garamond', serif;
+            /* Testo corpo elegante */
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
             height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            overflow: hidden;
+            /* Blocchiamo lo scroll generale */
         }
 
-        /* Gestione Schermate (Tutte nascoste tranne la prima) */
-        .screen {
-            display: none;
-            width: 100%;
-            max-width: 500px;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .active {
-            display: block;
+        /* --- STILE ARCANO --- */
+        h1,
+        h2,
+        button,
+        .position-label {
+            font-family: 'Cinzel', serif;
+            /* Font dei titoli */
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         h1 {
-            color: #d4af37;
-            font-weight: 200;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        /* Input & Form */
-        textarea {
-            width: 90%;
-            background: #252525;
-            border: 1px solid #444;
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            resize: none;
-            margin-bottom: 20px;
-            font-family: inherit;
-        }
-
-        select {
-            background: #252525;
-            color: #fff;
-            padding: 10px;
-            border: 1px solid #d4af37;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        /* Bottoni */
-        button {
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 15px 30px;
-            font-size: 16px;
-            border-radius: 30px;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 15px;
-            transition: 0.2s;
-        }
-
-        button:active {
-            background: #d4af37;
-            color: #000;
-        }
-
-        button.primary {
-            background: #d4af37;
-            color: #000;
-            font-weight: bold;
-            border: none;
-        }
-
-        /* Carta Coperta (Il Dorso) */
-        .card-back {
-            width: 200px;
-            height: 350px;
-            background: repeating-linear-gradient(45deg,
-                    #2b2b2b,
-                    #2b2b2b 10px,
-                    #333 10px,
-                    #333 20px);
-            border: 3px solid #d4af37;
-            border-radius: 15px;
-            margin: 40px auto;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-
-        /* Risultato */
-        .card-img-result {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #333;
-        }
-
-        .meaning-box {
-            background: #222;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .user-question-display {
-            font-style: italic;
-            color: #888;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #333;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-top: 30px;
+            border-bottom: 1px solid var(--gold);
+            display: inline-block;
             padding-bottom: 10px;
         }
 
-        @keyframes fadeIn {
+        /* Gestione Schermate */
+        .screen {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            /* Permette scroll verticale se serve */
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* Bottoni Arcani */
+        button {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 30px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        button:active {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* Input Fields */
+        input,
+        select,
+        textarea {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            color: var(--gold);
+            padding: 15px;
+            width: 100%;
+            max-width: 300px;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--gold);
+        }
+
+        /* --- IL MAZZO E LA PESCA --- */
+        #deck-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .deck-stack {
+            width: 180px;
+            height: 300px;
+            background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 5px, #222 5px, #222 10px);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.1);
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .deck-stack:active {
+            transform: scale(0.95);
+        }
+
+        .deck-stack::before {
+            content: "✦";
+            font-size: 50px;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        /* --- CAROUSEL ORIZZONTALE (LA MAGIA) --- */
+        #cards-carousel {
+            display: flex;
+            overflow-x: auto;
+            /* Scroll orizzontale */
+            scroll-snap-type: x mandatory;
+            /* Scatto magnetico */
+            width: 100%;
+            height: 100%;
+            gap: 20px;
+            padding-bottom: 50px;
+            /* Spazio per scrollbar invisibile */
+            align-items: flex-start;
+            /* Allinea in alto */
+        }
+
+        /* Nascondi scrollbar brutta */
+        #cards-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* La singola carta nel carousel */
+        .tarot-card-display {
+            flex: 0 0 85vw;
+            /* Occupa l'85% della larghezza schermo */
+            scroll-snap-align: center;
+            /* Si ferma al centro */
+            background: var(--card-bg);
+            border: 1px solid #333;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 2px;
+            /* Angoli poco arrotondati, più severi */
+            display: flex;
+            flex-direction: column;
+            animation: slideInRight 0.5s ease;
+            margin-top: 20px;
+            border-top: 3px solid var(--gold);
+            /* Dettaglio di stile */
+        }
+
+        .card-img-result {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: sepia(20%) contrast(110%);
+            /* Filtro leggero per uniformare */
+            border: 1px solid #333;
+        }
+
+        .meaning-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: left;
+            border-left: 1px solid var(--gold);
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+
+        .position-label {
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .card-name {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin: 5px 0 15px 0;
+        }
+
+        @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateX(50px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
-        /* Animazione Mescolamento */
-        .shuffle-anim {
-            font-size: 50px;
-            animation: spin 1s infinite linear;
-            display: inline-block;
-            margin: 40px;
-        }
-
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Contenitore flessibile delle carte */
-        .spread-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        /* Istruzione visiva per pescare */
+        #tap-hint {
             margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
         }
 
-        /* Lo slot della singola carta nel risultato */
-        .card-slot {
-            background: #222;
-            border: 1px solid #444;
-            border-radius: 10px;
-            padding: 15px;
-            width: 100%;
-            max-width: 300px;
-            /* Larghezza massima per carta singola */
-            animation: fadeIn 0.5s ease;
-        }
+        @keyframes pulse {
+            0% {
+                opacity: 0.5;
+            }
 
-        /* Quando siamo in modalità 3 carte, le rimpiccioliamo un po' per farle stare */
-        .spread-mode-3 .card-slot {
-            max-width: 100%;
-            /* Su mobile vanno una sotto l'altra */
-        }
+            50% {
+                opacity: 1;
+            }
 
-        /* Etichetta della posizione (es. "Passato") */
-        .position-label {
-            color: #888;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .card-img-result {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .card-title {
-            color: #d4af37;
-            font-size: 1.2em;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .card-desc {
-            font-size: 0.9em;
-            line-height: 1.5;
-            text-align: left;
+            100% {
+                opacity: 0.5;
+            }
         }
     </style>
 </head>
@@ -229,55 +264,53 @@
 <body>
 
     <div id="screen-home" class="screen active">
-        <h1>TAROCCHI</h1>
-        <p>Scegli il tuo metodo di lettura</p>
-        <button onclick="goToInput('one-card')">🔮 Carta Singola</button>
-        <button onclick="goToInput('three-cards')">⏳ 3 Carte (Passato/Presente/Futuro)</button>
-        <button onclick="alert('In arrivo presto!')" style="opacity: 0.5">✝️ Croce Celtica</button>
+        <h1>EMERALD SUN</h1>
+        <p style="font-style: italic; color: #666;">Tarocchi Intuitivi</p>
+        <br>
+        <button onclick="goToInput('one-card')">✦ Lettura Singola</button>
+        <button onclick="goToInput('three-cards')">✦ Tre Carte (Tempo)</button>
+        <button onclick="alert('Presto disponibile')">✦ Croce Celtica</button>
     </div>
 
     <div id="screen-input" class="screen">
-        <button onclick="goHome()" style="width:auto; border:none; padding:0; margin-bottom:20px; font-size:14px;">←
+        <button onclick="goHome()" style="border:none; color:#666; width:auto; align-self:flex-start">←
             Indietro</button>
-        <h2>Concentrati</h2>
-
-        <label style="display:block; text-align:left; margin-bottom:5px; color:#888;">La tua domanda
-            (facoltativo)</label>
-        <textarea id="user-question" rows="3" placeholder="Es: Cosa devo sapere su questa situazione?"></textarea>
-
-        <label style="display:block; text-align:left; margin-bottom:5px; color:#888;">Ambito</label>
+        <h2>L'Intento</h2>
+        <textarea id="user-question" rows="3" placeholder="Scrivi qui la tua domanda o lascia vuoto..."></textarea>
         <select id="user-category">
-            <option value="Generale">✨ Generale</option>
-            <option value="Amore">❤️ Amore & Relazioni</option>
-            <option value="Lavoro">💼 Lavoro & Carriera</option>
-            <option value="Crescita">🌱 Crescita Personale</option>
+            <option value="Generale">Generale</option>
+            <option value="Amore">Amore</option>
+            <option value="Lavoro">Lavoro</option>
+            <option value="Spirito">Spirito</option>
         </select>
-
-        <button class="primary" onclick="startShuffle()">Mescola il Mazzo</button>
+        <button onclick="startReading()">Procedi al Tavolo</button>
     </div>
 
-    <div id="screen-shuffle" class="screen">
-        <div class="shuffle-anim">🃏</div>
-        <p>Sto mescolando le energie...</p>
-    </div>
+    <div id="screen-reading" class="screen" style="padding:0;">
 
-    <div id="screen-deck" class="screen">
-        <h2>Il mazzo è pronto</h2>
-        <p>Tocca per pescare</p>
-        <div class="card-back" onclick="revealCard()">
-            ✦
+        <div
+            style="padding: 10px; width:100%; border-bottom: 1px solid #222; background:rgba(0,0,0,0.8); z-index:10; display:flex; justify-content:space-between; align-items:center;">
+            <span id="reading-status" style="font-family:'Cinzel'; color:var(--gold); font-size:0.9rem;">Tocca il
+                mazzo</span>
+            <button onclick="goHome()"
+                style="width:auto; padding:5px 10px; font-size:0.8rem; margin:0; border-color:#333;">X</button>
+        </div>
+
+        <div id="reading-area"
+            style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden;">
+
+            <div id="deck-container" style="text-align:center;">
+                <div class="deck-stack" onclick="drawNextCard()"></div>
+                <div id="tap-hint">Tocca per pescare</div>
+            </div>
+
+            <div id="cards-carousel" style="display:none;">
+            </div>
+
         </div>
     </div>
 
-    <div id="screen-result" class="screen">
-        <div class="user-question-display" id="display-question">...</div>
-
-        <div id="cards-container" class="spread-container"></div>
-
-        <button onclick="goHome()" style="margin-top:30px;">Nuova Lettura</button>
-    </div>
-
-    <script src="app.js"></script>
+    <script src="app.js?v=4"></script>
 </body>
 
 </html>
