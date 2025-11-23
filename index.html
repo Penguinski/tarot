@@ -7,137 +7,139 @@
     <title>Tarocchi</title>
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#1a1a1a">
     <style>
         body {
             background-color: #1a1a1a;
             color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
             text-align: center;
-            /* Evita il rimbalzo elastico su iOS */
-            overscroll-behavior-y: none;
-        }
-
-        /* Stile Bottoni Generici */
-        button {
-            cursor: pointer;
-            font-weight: bold;
-            border: none;
-            outline: none;
-        }
-
-        /* Schermata Iniziale */
-        h1 {
-            font-weight: 200;
-            letter-spacing: 3px;
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #888;
-            margin-bottom: 30px;
-        }
-
-        /* Bottoni Intento */
-        .intent-buttons {
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            max-width: 300px;
-            margin: 0 auto;
+            align-items: center;
         }
 
-        .btn-intent {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-intent:active {
-            background: #d4af37;
-            color: #000;
-            transform: scale(0.98);
-        }
-
-        /* Area della Carta (Risultato) */
-        #card-display {
+        /* Gestione Schermate (Tutte nascoste tranne la prima) */
+        .screen {
             display: none;
-            /* Nascosto all'inizio */
-            max-width: 600px;
-            margin: 0 auto;
-            animation: fadeIn 0.5s ease;
-            padding-bottom: 50px;
-        }
-
-        /* Immagine */
-        .card-container {
-            margin: 20px auto;
-            max-width: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 2px solid #333;
-        }
-
-        #card-image {
             width: 100%;
-            height: auto;
+            max-width: 500px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .active {
             display: block;
         }
 
-        h2 {
-            margin-bottom: 5px;
-            font-size: 1.8em;
-            color: #fff;
-        }
-
-        .keywords {
+        h1 {
             color: #d4af37;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 25px;
+            font-weight: 200;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
         }
 
-        /* Sezioni Testo */
-        .section-title {
-            color: #666;
-            font-size: 0.75em;
-            text-transform: uppercase;
-            margin-top: 30px;
-            letter-spacing: 1px;
-            font-weight: bold;
-        }
-
-        .box {
-            background: #252525;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: left;
-            margin-top: 10px;
-            font-size: 0.95em;
-        }
-
-        /* Bottone Ricomincia */
-        .btn-restart {
-            background: #333;
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             color: #fff;
-            padding: 15px 40px;
+        }
+
+        /* Input & Form */
+        textarea {
+            width: 90%;
+            background: #252525;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            resize: none;
+            margin-bottom: 20px;
+            font-family: inherit;
+        }
+
+        select {
+            background: #252525;
+            color: #fff;
+            padding: 10px;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* Bottoni */
+        button {
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 15px 30px;
             font-size: 16px;
             border-radius: 30px;
-            margin-top: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 15px;
+            transition: 0.2s;
+        }
+
+        button:active {
+            background: #d4af37;
+            color: #000;
+        }
+
+        button.primary {
+            background: #d4af37;
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+
+        /* Carta Coperta (Il Dorso) */
+        .card-back {
+            width: 200px;
+            height: 350px;
+            background: repeating-linear-gradient(45deg,
+                    #2b2b2b,
+                    #2b2b2b 10px,
+                    #333 10px,
+                    #333 20px);
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+            margin: 40px auto;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        /* Risultato */
+        .card-img-result {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .meaning-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .user-question-display {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
 
         @keyframes fadeIn {
@@ -151,40 +153,83 @@
                 transform: translateY(0);
             }
         }
+
+        /* Animazione Mescolamento */
+        .shuffle-anim {
+            font-size: 50px;
+            animation: spin 1s infinite linear;
+            display: inline-block;
+            margin: 40px;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <div id="landing">
-        <br>
+    <div id="screen-home" class="screen active">
         <h1>TAROCCHI</h1>
-        <p>Cosa vuoi chiedere alle carte?</p>
+        <p>Scegli il tuo metodo di lettura</p>
+        <button onclick="goToInput('one-card')">🔮 Carta Singola</button>
+        <button onclick="alert('In arrivo presto!')" style="opacity: 0.5">⏳ 3 Carte (Passato/Presente/Futuro)</button>
+        <button onclick="alert('In arrivo presto!')" style="opacity: 0.5">✝️ Croce Celtica</button>
+    </div>
 
-        <div class="intent-buttons">
-            <button onclick="setIntent('Generale')" class="btn-intent">✨ Lettura Generale</button>
-            <button onclick="setIntent('Amore')" class="btn-intent">❤️ Amore & Relazioni</button>
-            <button onclick="setIntent('Lavoro')" class="btn-intent">💼 Lavoro & Soldi</button>
-            <button onclick="setIntent('Crescita')" class="btn-intent">🌱 Crescita Personale</button>
+    <div id="screen-input" class="screen">
+        <button onclick="goHome()" style="width:auto; border:none; padding:0; margin-bottom:20px; font-size:14px;">←
+            Indietro</button>
+        <h2>Concentrati</h2>
+
+        <label style="display:block; text-align:left; margin-bottom:5px; color:#888;">La tua domanda
+            (facoltativo)</label>
+        <textarea id="user-question" rows="3" placeholder="Es: Cosa devo sapere su questa situazione?"></textarea>
+
+        <label style="display:block; text-align:left; margin-bottom:5px; color:#888;">Ambito</label>
+        <select id="user-category">
+            <option value="Generale">✨ Generale</option>
+            <option value="Amore">❤️ Amore & Relazioni</option>
+            <option value="Lavoro">💼 Lavoro & Carriera</option>
+            <option value="Crescita">🌱 Crescita Personale</option>
+        </select>
+
+        <button class="primary" onclick="startShuffle()">Mescola il Mazzo</button>
+    </div>
+
+    <div id="screen-shuffle" class="screen">
+        <div class="shuffle-anim">🃏</div>
+        <p>Sto mescolando le energie...</p>
+    </div>
+
+    <div id="screen-deck" class="screen">
+        <h2>Il mazzo è pronto</h2>
+        <p>Tocca per pescare</p>
+        <div class="card-back" onclick="revealCard()">
+            ✦
         </div>
     </div>
 
-    <div id="card-display">
-        <h2 id="card-name">Nome Carta</h2>
-        <div class="keywords" id="card-keywords">Parole chiave</div>
+    <div id="screen-result" class="screen">
+        <div class="user-question-display" id="display-question">...</div>
 
-        <div class="card-container">
-            <img id="card-image" src="" alt="Carta dei Tarocchi">
+        <h2 id="res-card-name" style="color: #d4af37;">Nome Carta</h2>
+        <img id="res-card-img" class="card-img-result" src="" alt="Carta">
+
+        <div class="meaning-box">
+            <strong style="color: #d4af37; display:block; margin-bottom:5px;">Significato:</strong>
+            <span id="res-meaning">...</span>
         </div>
 
-        <div class="section-title" id="section-meaning-title">Significato</div>
+        <div class="meaning-box" style="border-left: 3px solid #d4af37;">
+            <strong style="color: #d4af37; display:block; margin-bottom:5px;">Spunto di riflessione:</strong>
+            <span id="res-reflection">...</span>
+        </div>
 
-        <div class="box" id="modern-meaning">...</div>
-
-        <div class="section-title">Spunto di Riflessione</div>
-        <div class="box" id="reflection" style="border-left: 3px solid #d4af37;">...</div>
-
-        <button onclick="location.reload()" class="btn-restart">Nuova Lettura</button>
+        <button onclick="goHome()" style="margin-top:30px;">Nuova Lettura</button>
     </div>
 
     <script src="app.js"></script>
