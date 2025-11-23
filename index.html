@@ -103,6 +103,29 @@
                 transform: translateY(0);
             }
         }
+
+        .intent-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .btn-intent {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-intent:active {
+            background: #d4af37;
+            color: #000;
+        }
     </style>
 </head>
 
@@ -110,26 +133,14 @@
 
     <div id="landing">
         <h1>TAROCCHI</h1>
-        <p>Concentrati sulla tua domanda.</p>
-        <button onclick="drawOneCard()">Pesca una Carta</button>
-    </div>
+        <p>Qual è il tuo intento oggi?</p>
 
-    <div id="card-display">
-        <h2 id="card-name">Nome Carta</h2>
-        <div class="keywords" id="card-keywords">Parole chiave</div>
-
-        <div class="img-placeholder">
-            <img id="card-image" style="display:none;" src="" alt="">
-            <span style="font-size: 40px;">🔮</span>
+        <div class="intent-buttons">
+            <button onclick="setIntent('Generale')" class="btn-intent">✨ Generale</button>
+            <button onclick="setIntent('Amore')" class="btn-intent">❤️ Amore</button>
+            <button onclick="setIntent('Lavoro')" class="btn-intent">💼 Lavoro</button>
+            <button onclick="setIntent('Crescita')" class="btn-intent">🌱 Crescita</button>
         </div>
-
-        <div class="section-title">Significato</div>
-        <div class="box" id="modern-meaning">...</div>
-
-        <div class="section-title">Riflessione</div>
-        <div class="box" id="reflection" style="border-left: 3px solid #d4af37;">...</div>
-
-        <button onclick="drawOneCard()">Pesca ancora</button>
     </div>
 
     <script src="app.js"></script>

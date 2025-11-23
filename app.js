@@ -40,3 +40,14 @@ function drawOneCard() {
 
 // Avvia il caricamento
 loadDeck();
+
+let currentIntent = "Generale";
+
+function setIntent(intent) {
+    currentIntent = intent;
+    // Cambiamo il testo nella schermata successiva
+    document.getElementById('section-meaning-title').innerText = "Significato per: " + intent;
+
+    // Pesca la carta
+    drawOneCard();
+}
