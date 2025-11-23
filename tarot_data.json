@@ -11,6 +11,7 @@
         ],
         "waite_meaning": "Lo spirito in cerca di esperienza.",
         "modern_meaning": "Abbraccia l'ignoto e fidati del tuo istinto; ogni nuovo inizio richiede un salto di fede.",
+        "reversed_meaning": "Hai paura di lanciarti o stai agendo con troppa imprudenza. Trova l'equilibrio tra rischio e cautela.",
         "reflection": "Quale rischio sto evitando per paura di sembrare sciocco?"
     },
     {
@@ -25,6 +26,7 @@
         ],
         "waite_meaning": "La volontà nel suo atto di creazione.",
         "modern_meaning": "Hai tutte le risorse necessarie per realizzare i tuoi obiettivi; è il momento di agire.",
+        "reversed_meaning": "Stai manipolando la situazione o non stai usando i tuoi talenti. Sii onesto con te stesso.",
         "reflection": "Quali talenti non sto utilizzando appieno?"
     },
     {
@@ -39,6 +41,7 @@
         ],
         "waite_meaning": "La saggezza che attende di essere svelata.",
         "modern_meaning": "Ascolta la tua voce interiore e presta attenzione ai tuoi sogni; non tutto deve essere razionale.",
+        "reversed_meaning": "Stai ignorando la tua intuizione o ti stai isolando troppo. Riconnettiti con il tuo mondo interiore.",
         "reflection": "Cosa mi sta dicendo il mio intuito che sto ignorando?"
     },
     {
@@ -53,6 +56,7 @@
         ],
         "waite_meaning": "La porta della vita e il cuore della natura.",
         "modern_meaning": "Coltiva la bellezza e la creatività nella tua vita; permetti alle cose di crescere naturalmente.",
+        "reversed_meaning": "Blocco creativo o dipendenza dagli altri. Prenditi cura di te stesso prima di nutrire gli altri.",
         "reflection": "Come posso portare più bellezza e nutrimento nella mia vita?"
     },
     {
@@ -67,6 +71,7 @@
         ],
         "waite_meaning": "Il potere della ragione e della logica.",
         "modern_meaning": "Stabilisci confini chiari e porta ordine nel caos; la disciplina è la chiave del successo.",
+        "reversed_meaning": "Eccesso di controllo o mancanza di disciplina. Non essere tirannico con te stesso o con gli altri.",
         "reflection": "Dove ho bisogno di più struttura o disciplina?"
     },
     {
@@ -81,6 +86,7 @@
         ],
         "waite_meaning": "Il ponte tra il divino e l'umano.",
         "modern_meaning": "Cerca saggezza nelle tradizioni o in un mentore; a volte la via battuta è quella giusta.",
+        "reversed_meaning": "Ribellione contro le regole o cattivi consigli. Trova la tua propria via spirituale.",
         "reflection": "Quali valori tradizionali o spirituali sono importanti per me ora?"
     },
     {
@@ -95,6 +101,7 @@
         ],
         "waite_meaning": "L'attrazione degli opposti e la scelta del cuore.",
         "modern_meaning": "Sei di fronte a una scelta importante; segui ciò che risuona con i tuoi valori più profondi.",
+        "reversed_meaning": "Disarmonia o scelta difficile. Attenzione alle decisioni prese per paura o pressione.",
         "reflection": "Quale scelta devo compiere per essere fedele a me stesso?"
     },
     {
@@ -109,6 +116,7 @@
         ],
         "waite_meaning": "Il trionfo della mente sulla materia.",
         "modern_meaning": "Mantieni il focus e la determinazione; puoi superare gli ostacoli con la forza di volontà.",
+        "reversed_meaning": "Perdita di controllo o aggressività. Rallenta e riconsidera la direzione prima di schiantarti.",
         "reflection": "Cosa sto cercando di controllare eccessivamente?"
     },
     {
@@ -123,6 +131,7 @@
         ],
         "waite_meaning": "La forza che risiede nella gentilezza.",
         "modern_meaning": "Affronta le sfide con compassione e pazienza piuttosto che con forza bruta.",
+        "reversed_meaning": "Dubbio su di sé o rabbia esplosiva. Trova la forza nella calma, non nell'aggressività.",
         "reflection": "In quale situazione devo mostrare gentilezza invece di rabbia?"
     },
     {
@@ -137,6 +146,7 @@
         ],
         "waite_meaning": "La luce della verità interiore.",
         "modern_meaning": "Prenditi del tempo per stare da solo e riflettere; le risposte che cerchi sono dentro di te.",
+        "reversed_meaning": "Isolamento eccessivo o rifiuto di guardarsi dentro. Non chiuderti fuori dal mondo.",
         "reflection": "Di cosa ho bisogno di liberarmi per trovare la mia verità?"
     },
     {
@@ -151,6 +161,7 @@
         ],
         "waite_meaning": "Il perpetuo movimento dell'universo.",
         "modern_meaning": "Accetta che tutto cambia; cogli le opportunità quando si presentano e adattati al flusso.",
+        "reversed_meaning": "Resistenza al cambiamento o sfortuna temporanea. Non combattere l'inevitabile, adattati.",
         "reflection": "Come posso adattarmi meglio ai cambiamenti in corso?"
     },
     {
@@ -165,6 +176,7 @@
         ],
         "waite_meaning": "La verità che taglia ogni illusione.",
         "modern_meaning": "Sii onesto con te stesso e con gli altri; ogni azione ha una conseguenza.",
+        "reversed_meaning": "Ingiustizia o disonestà. Assumiti la responsabilità delle tue azioni per ristabilire l'equilibrio.",
         "reflection": "Sto agendo con integrità e onestà?"
     },
     {
@@ -179,6 +191,7 @@
         ],
         "waite_meaning": "La saggezza che viene dalla resa.",
         "modern_meaning": "A volte bisogna fermarsi e guardare le cose da un'altra angolazione; lascia andare il controllo.",
+        "reversed_meaning": "Stallo inutile o resistenza al sacrificio. Smetti di lottare e accetta la situazione.",
         "reflection": "Cosa devo sacrificare per ottenere una visione più chiara?"
     },
     {
@@ -193,6 +206,7 @@
         ],
         "waite_meaning": "La fine necessaria per un nuovo inizio.",
         "modern_meaning": "Non temere i finali; sono necessari per la tua evoluzione e per fare spazio al nuovo.",
+        "reversed_meaning": "Resistenza al cambiamento o stagnazione. Lascia andare ciò che è morto per poter vivere.",
         "reflection": "Cosa è giunto il momento di lasciar andare?"
     },
     {
@@ -207,6 +221,7 @@
         ],
         "waite_meaning": "L'alchimia dell'anima.",
         "modern_meaning": "Cerca l'equilibrio e la moderazione; integra gli opposti per trovare la pace interiore.",
+        "reversed_meaning": "Squilibrio o eccesso. Stai esagerando in qualcosa, ritrova il centro.",
         "reflection": "Dove ho perso il mio equilibrio?"
     },
     {
@@ -221,6 +236,7 @@
         ],
         "waite_meaning": "Le catene che ci costruiamo da soli.",
         "modern_meaning": "Riconosci le tue dipendenze e i comportamenti autodistruttivi; sei più libero di quanto pensi.",
+        "reversed_meaning": "Liberazione dalle catene o negazione dell'ombra. Affronta i tuoi demoni per essere libero.",
         "reflection": "Quali catene mi sto imponendo da solo?"
     },
     {
@@ -235,6 +251,7 @@
         ],
         "waite_meaning": "Il fulmine che distrugge le false strutture.",
         "modern_meaning": "Anche se doloroso, il crollo delle vecchie strutture porta verità e liberazione.",
+        "reversed_meaning": "Paura del cambiamento o disastro evitato. Non aggrapparti alle macerie, ricostruisci.",
         "reflection": "Quale verità sto evitando che potrebbe sconvolgere la mia vita?"
     },
     {
@@ -249,6 +266,7 @@
         ],
         "waite_meaning": "La luce della speranza dopo la tempesta.",
         "modern_meaning": "Abbi fede nel futuro e lasciati ispirare; sei sulla strada giusta per la guarigione.",
+        "reversed_meaning": "Disperazione o mancanza di fede. Non perdere la speranza, la luce è ancora lì.",
         "reflection": "Cosa mi dà speranza e ispirazione oggi?"
     },
     {
@@ -263,6 +281,7 @@
         ],
         "waite_meaning": "Il regno dei sogni e delle ombre.",
         "modern_meaning": "Non tutto è come sembra; affronta le tue paure e naviga attraverso l'incertezza con intuito.",
+        "reversed_meaning": "Confusione mentale o inganno svelato. Cerca chiarezza e non fidarti delle apparenze.",
         "reflection": "Quali paure nascoste mi stanno bloccando?"
     },
     {
@@ -277,6 +296,7 @@
         ],
         "waite_meaning": "La luce della coscienza e della felicità.",
         "modern_meaning": "Goditi il successo e la felicità; lascia che la tua luce interiore brilli senza riserve.",
+        "reversed_meaning": "Gioia ritardata o ottimismo eccessivo. Non dare tutto per scontato, apprezza le piccole cose.",
         "reflection": "Cosa mi rende veramente felice e vitale?"
     },
     {
@@ -291,201 +311,7 @@
         ],
         "waite_meaning": "La chiamata al risveglio spirituale.",
         "modern_meaning": "È il momento di perdonare te stesso e gli altri; rispondi alla tua chiamata interiore.",
-        "reflection": "A quale chiamata sto cercando di rispondere?"
-    },
-    {
-        "id": 21,
-        "name": "Il Mondo",
-        "image": "assets/images/maj21.jpg",
-        "keywords": [
-            "Completamento",
-            "Realizzazione",
-            "Viaggio"
-        ],
-        "waite_meaning": "Il trionfo della mente sulla materia.",
-        "modern_meaning": "Mantieni il focus e la determinazione; puoi superare gli ostacoli con la forza di volontà.",
-        "reflection": "Cosa sto cercando di controllare eccessivamente?"
-    },
-    {
-        "id": 8,
-        "name": "La Forza",
-        "image": "assets/images/maj08.jpg",
-        "keywords": [
-            "Coraggio",
-            "Pazienza",
-            "Compassione",
-            "Forza interiore"
-        ],
-        "waite_meaning": "La forza che risiede nella gentilezza.",
-        "modern_meaning": "Affronta le sfide con compassione e pazienza piuttosto che con forza bruta.",
-        "reflection": "In quale situazione devo mostrare gentilezza invece di rabbia?"
-    },
-    {
-        "id": 9,
-        "name": "L'Eremita",
-        "image": "assets/images/maj09.jpg",
-        "keywords": [
-            "Introspezione",
-            "Solitudine",
-            "Guida interiore",
-            "Ricerca"
-        ],
-        "waite_meaning": "La luce della verità interiore.",
-        "modern_meaning": "Prenditi del tempo per stare da solo e riflettere; le risposte che cerchi sono dentro di te.",
-        "reflection": "Di cosa ho bisogno di liberarmi per trovare la mia verità?"
-    },
-    {
-        "id": 10,
-        "name": "La Ruota della Fortuna",
-        "image": "assets/images/maj10.jpg",
-        "keywords": [
-            "Cambiamento",
-            "Destino",
-            "Cicli",
-            "Fortuna"
-        ],
-        "waite_meaning": "Il perpetuo movimento dell'universo.",
-        "modern_meaning": "Accetta che tutto cambia; cogli le opportunità quando si presentano e adattati al flusso.",
-        "reflection": "Come posso adattarmi meglio ai cambiamenti in corso?"
-    },
-    {
-        "id": 11,
-        "name": "La Giustizia",
-        "image": "assets/images/maj11.jpg",
-        "keywords": [
-            "Equità",
-            "Verità",
-            "Legge",
-            "Causa-effetto"
-        ],
-        "waite_meaning": "La verità che taglia ogni illusione.",
-        "modern_meaning": "Sii onesto con te stesso e con gli altri; ogni azione ha una conseguenza.",
-        "reflection": "Sto agendo con integrità e onestà?"
-    },
-    {
-        "id": 12,
-        "name": "L'Appeso",
-        "image": "assets/images/maj12.jpg",
-        "keywords": [
-            "Sacrificio",
-            "Nuova prospettiva",
-            "Attesa",
-            "Sospensione"
-        ],
-        "waite_meaning": "La saggezza che viene dalla resa.",
-        "modern_meaning": "A volte bisogna fermarsi e guardare le cose da un'altra angolazione; lascia andare il controllo.",
-        "reflection": "Cosa devo sacrificare per ottenere una visione più chiara?"
-    },
-    {
-        "id": 13,
-        "name": "La Morte",
-        "image": "assets/images/maj13.jpg",
-        "keywords": [
-            "Fine",
-            "Trasformazione",
-            "Rinascita",
-            "Cambiamento"
-        ],
-        "waite_meaning": "La fine necessaria per un nuovo inizio.",
-        "modern_meaning": "Non temere i finali; sono necessari per la tua evoluzione e per fare spazio al nuovo.",
-        "reflection": "Cosa è giunto il momento di lasciar andare?"
-    },
-    {
-        "id": 14,
-        "name": "La Temperanza",
-        "image": "assets/images/maj14.jpg",
-        "keywords": [
-            "Equilibrio",
-            "Moderazione",
-            "Guarigione",
-            "Armonia"
-        ],
-        "waite_meaning": "L'alchimia dell'anima.",
-        "modern_meaning": "Cerca l'equilibrio e la moderazione; integra gli opposti per trovare la pace interiore.",
-        "reflection": "Dove ho perso il mio equilibrio?"
-    },
-    {
-        "id": 15,
-        "name": "Il Diavolo",
-        "image": "assets/images/maj15.jpg",
-        "keywords": [
-            "Dipendenza",
-            "Materialismo",
-            "Ombra",
-            "Tentazione"
-        ],
-        "waite_meaning": "Le catene che ci costruiamo da soli.",
-        "modern_meaning": "Riconosci le tue dipendenze e i comportamenti autodistruttivi; sei più libero di quanto pensi.",
-        "reflection": "Quali catene mi sto imponendo da solo?"
-    },
-    {
-        "id": 16,
-        "name": "La Torre",
-        "image": "assets/images/maj16.jpg",
-        "keywords": [
-            "Distruzione",
-            "Rivelazione",
-            "Caos",
-            "Risveglio"
-        ],
-        "waite_meaning": "Il fulmine che distrugge le false strutture.",
-        "modern_meaning": "Anche se doloroso, il crollo delle vecchie strutture porta verità e liberazione.",
-        "reflection": "Quale verità sto evitando che potrebbe sconvolgere la mia vita?"
-    },
-    {
-        "id": 17,
-        "name": "Le Stelle",
-        "image": "assets/images/maj17.jpg",
-        "keywords": [
-            "Speranza",
-            "Ispirazione",
-            "Serenità",
-            "Guarigione"
-        ],
-        "waite_meaning": "La luce della speranza dopo la tempesta.",
-        "modern_meaning": "Abbi fede nel futuro e lasciati ispirare; sei sulla strada giusta per la guarigione.",
-        "reflection": "Cosa mi dà speranza e ispirazione oggi?"
-    },
-    {
-        "id": 18,
-        "name": "La Luna",
-        "image": "assets/images/maj18.jpg",
-        "keywords": [
-            "Illusione",
-            "Paura",
-            "Sogno",
-            "Inconscio"
-        ],
-        "waite_meaning": "Il regno dei sogni e delle ombre.",
-        "modern_meaning": "Non tutto è come sembra; affronta le tue paure e naviga attraverso l'incertezza con intuito.",
-        "reflection": "Quali paure nascoste mi stanno bloccando?"
-    },
-    {
-        "id": 19,
-        "name": "Il Sole",
-        "image": "assets/images/maj19.jpg",
-        "keywords": [
-            "Gioia",
-            "Successo",
-            "Vitalità",
-            "Chiarezza"
-        ],
-        "waite_meaning": "La luce della coscienza e della felicità.",
-        "modern_meaning": "Goditi il successo e la felicità; lascia che la tua luce interiore brilli senza riserve.",
-        "reflection": "Cosa mi rende veramente felice e vitale?"
-    },
-    {
-        "id": 20,
-        "name": "Il Giudizio",
-        "image": "assets/images/maj20.jpg",
-        "keywords": [
-            "Rinascita",
-            "Chiamata",
-            "Assoluzione",
-            "Risveglio"
-        ],
-        "waite_meaning": "La chiamata al risveglio spirituale.",
-        "modern_meaning": "È il momento di perdonare te stesso e gli altri; rispondi alla tua chiamata interiore.",
+        "reversed_meaning": "Rifiuto della chiamata o autocritica eccessiva. Smetti di giudicarti e perdonati.",
         "reflection": "A quale chiamata sto cercando di rispondere?"
     },
     {
@@ -500,6 +326,7 @@
         ],
         "waite_meaning": "La danza della vita completata.",
         "modern_meaning": "Hai completato un ciclo importante; celebra i tuoi successi e preparati per il prossimo livello.",
+        "reversed_meaning": "Incompiutezza o mancanza di chiusura. Finisci ciò che hai iniziato prima di muoverti.",
         "reflection": "Cosa ho portato a termine di cui posso essere fiero?"
     },
     {
@@ -514,6 +341,7 @@
         ],
         "waite_meaning": "L'origine dell'energia creativa.",
         "modern_meaning": "Un'esplosione di ispirazione e creatività; è il momento perfetto per iniziare un nuovo progetto.",
+        "reversed_meaning": "Mancanza di energia o falsi inizi. Non forzare le cose se non c'è la scintilla.",
         "reflection": "Cosa mi accende di passione in questo momento?"
     },
     {
@@ -528,6 +356,7 @@
         ],
         "waite_meaning": "Il dominio sulle proprie creazioni.",
         "modern_meaning": "Stai pianificando il tuo futuro; esci dalla tua zona di comfort ed esplora nuove possibilità.",
+        "reversed_meaning": "Paura dell'ignoto o cattiva pianificazione. Non restare bloccato nell'indecisione.",
         "reflection": "Quale primo passo devo compiere verso il mio obiettivo?"
     },
     {
@@ -542,6 +371,7 @@
         ],
         "waite_meaning": "La forza stabilita e l'impresa commerciale.",
         "modern_meaning": "I tuoi piani stanno prendendo forma; guarda avanti con fiducia e preparati all'espansione.",
+        "reversed_meaning": "Ritardi o ostacoli imprevisti. Sii paziente, i risultati arriveranno.",
         "reflection": "Dove voglio essere tra un anno?"
     },
     {
@@ -556,6 +386,7 @@
         ],
         "waite_meaning": "Il riposo perfetto e la pace domestica.",
         "modern_meaning": "È tempo di celebrare i successi raggiunti; goditi la stabilità e la gioia con le persone care.",
+        "reversed_meaning": "Instabilità domestica o celebrazione rimandata. Risolvi i conflitti in famiglia.",
         "reflection": "Cosa posso celebrare oggi nella mia vita?"
     },
     {
@@ -570,6 +401,7 @@
         ],
         "waite_meaning": "La lotta per la ricchezza e la fortuna.",
         "modern_meaning": "Stai affrontando competizione o conflitti minori; usa questa energia per migliorarti, non per distruggere.",
+        "reversed_meaning": "Fine del conflitto o evitamento. Trova un compromesso o allontanati dalla lotta.",
         "reflection": "Sto combattendo una battaglia che vale la pena?"
     },
     {
@@ -584,6 +416,7 @@
         ],
         "waite_meaning": "Il trionfo meritato.",
         "modern_meaning": "I tuoi sforzi sono stati riconosciuti; goditi il successo ma rimani umile.",
+        "reversed_meaning": "Fallimento o arroganza. Non lasciare che il successo ti dia alla testa.",
         "reflection": "Come posso accettare i complimenti con grazia?"
     },
     {
@@ -598,6 +431,7 @@
         ],
         "waite_meaning": "Il coraggio di fronte alle avversità.",
         "modern_meaning": "Difendi le tue posizioni e i tuoi valori; non mollare anche se ti senti sotto pressione.",
+        "reversed_meaning": "Arrendersi o sentirsi sopraffatti. Scegli le tue battaglie con saggezza.",
         "reflection": "Per cosa sono disposto a lottare?"
     },
     {
@@ -612,6 +446,7 @@
         ],
         "waite_meaning": "L'attività rapida e la fretta.",
         "modern_meaning": "Le cose si muovono velocemente; agisci ora e non esitare, il momento è propizio.",
+        "reversed_meaning": "Ritardi o fretta eccessiva. Rallenta per non commettere errori.",
         "reflection": "Dove devo agire con rapidità?"
     },
     {
@@ -626,6 +461,7 @@
         ],
         "waite_meaning": "La forza nell'opposizione.",
         "modern_meaning": "Sei stanco ma non mollare; sei quasi arrivato al traguardo, resisti ancora un po'.",
+        "reversed_meaning": "Esaurimento o paranoia. Abbassa le difese quando sei al sicuro.",
         "reflection": "Quale ultima riserva di forza posso attingere?"
     },
     {
@@ -640,6 +476,7 @@
         ],
         "waite_meaning": "L'oppressione della ricchezza e del potere.",
         "modern_meaning": "Ti sei fatto carico di troppe responsabilità; impara a delegare o a lasciare andare ciò che non serve.",
+        "reversed_meaning": "Crollo sotto il peso o rilascio del fardello. È il momento di chiedere aiuto.",
         "reflection": "Quale peso posso deporre oggi?"
     },
     {
@@ -654,6 +491,7 @@
         ],
         "waite_meaning": "Un messaggero fedele e uno straniero benevolo.",
         "modern_meaning": "Una nuova idea o passione sta nascendo; sii curioso e aperto alle novità.",
+        "reversed_meaning": "Mancanza di direzione o idee confuse. Chiarisci cosa vuoi prima di partire.",
         "reflection": "Quale nuova avventura mi sta chiamando?"
     },
     {
@@ -668,6 +506,7 @@
         ],
         "waite_meaning": "La partenza e l'assenza.",
         "modern_meaning": "Agisci con passione e coraggio, ma attento a non essere troppo impulsivo.",
+        "reversed_meaning": "Impulsività distruttiva o ritardi. Pensa prima di agire.",
         "reflection": "Sto correndo verso qualcosa o scappando da qualcosa?"
     },
     {
@@ -682,6 +521,7 @@
         ],
         "waite_meaning": "La natura amichevole e casta.",
         "modern_meaning": "Irradia fiducia e calore; sei capace di guidare gli altri con il tuo esempio positivo.",
+        "reversed_meaning": "Gelosia o insicurezza. Non spegnere la luce degli altri per brillare.",
         "reflection": "Come posso ispirare gli altri oggi?"
     },
     {
@@ -696,6 +536,7 @@
         ],
         "waite_meaning": "L'uomo onesto e coscienzioso.",
         "modern_meaning": "Prendi il comando della situazione con visione e integrità; hai il potere di realizzare grandi cose.",
+        "reversed_meaning": "Arroganza o inefficacia. Sii un leader, non un dittatore.",
         "reflection": "Che tipo di leader voglio essere?"
     },
     {
@@ -710,6 +551,7 @@
         ],
         "waite_meaning": "La casa del vero cuore.",
         "modern_meaning": "Un nuovo inizio emotivo; apri il tuo cuore all'amore e alla compassione.",
+        "reversed_meaning": "Emozioni bloccate o amore non corrisposto. Non chiudere il tuo cuore per paura.",
         "reflection": "A cosa sto aprendo il mio cuore?"
     },
     {
@@ -724,6 +566,7 @@
         ],
         "waite_meaning": "L'amore e l'amicizia sincera.",
         "modern_meaning": "Una connessione profonda con qualcuno; coltiva le tue relazioni con cura e rispetto.",
+        "reversed_meaning": "Disarmonia o rottura. Comunica apertamente per risolvere i conflitti.",
         "reflection": "Con chi sento una vera connessione?"
     },
     {
@@ -738,6 +581,7 @@
         ],
         "waite_meaning": "La conclusione felice e la vittoria.",
         "modern_meaning": "Celebra con gli amici e condividi la tua gioia; il supporto della comunità è prezioso.",
+        "reversed_meaning": "Isolamento o eccessi. Non trascurare le tue responsabilità per il divertimento.",
         "reflection": "Chi sono le persone che mi sostengono?"
     },
     {
@@ -752,6 +596,7 @@
         ],
         "waite_meaning": "La stanchezza e il disgusto immaginario.",
         "modern_meaning": "Non chiuderti in te stesso; guarda bene, c'è un'opportunità che stai ignorando.",
+        "reversed_meaning": "Risveglio o accettazione. Esci dal tuo guscio e cogli l'attimo.",
         "reflection": "Cosa mi sto perdendo concentrandomi su ciò che non ho?"
     },
     {
@@ -766,6 +611,7 @@
         ],
         "waite_meaning": "La perdita parziale ma non totale.",
         "modern_meaning": "È normale essere tristi per una perdita, ma non dimenticare ciò che ti è rimasto.",
+        "reversed_meaning": "Accettazione e guarigione. Il dolore sta passando, guarda al futuro.",
         "reflection": "Cosa posso ancora salvare e valorizzare?"
     },
     {
@@ -780,6 +626,7 @@
         ],
         "waite_meaning": "Il passato che guarda al futuro.",
         "modern_meaning": "Riconnettiti con la tua innocenza interiore o con qualcuno del passato; i ricordi possono guarire.",
+        "reversed_meaning": "Vivere nel passato o rifiuto di crescere. Lascia andare i vecchi schemi.",
         "reflection": "Quale ricordo felice può darmi forza oggi?"
     },
     {
@@ -794,6 +641,7 @@
         ],
         "waite_meaning": "I favori illusori e le immagini della fantasia.",
         "modern_meaning": "Hai molte opzioni, ma non tutte sono reali; scegli con saggezza e non perderti nei sogni.",
+        "reversed_meaning": "Chiarezza o fine delle illusioni. Fai una scelta concreta e smetti di fantasticare.",
         "reflection": "Quale scelta è basata sulla realtà e non sull'illusione?"
     },
     {
@@ -808,6 +656,7 @@
         ],
         "waite_meaning": "Il declino di un interesse.",
         "modern_meaning": "È tempo di lasciare andare ciò che non ti soddisfa più e cercare un significato più profondo.",
+        "reversed_meaning": "Paura di lasciare o ritorno. Non restare in una situazione infelice per paura.",
         "reflection": "Cosa devo lasciarmi alle spalle per crescere?"
     },
     {
@@ -822,6 +671,7 @@
         ],
         "waite_meaning": "Il successo materiale e il benessere.",
         "modern_meaning": "I tuoi desideri si stanno realizzando; sii grato e goditi questo momento di pienezza.",
+        "reversed_meaning": "Insoddisfazione o avidità. La felicità vera non viene solo dalle cose materiali.",
         "reflection": "Di cosa sono profondamente grato oggi?"
     },
     {
@@ -836,6 +686,7 @@
         ],
         "waite_meaning": "L'appagamento del cuore e la perfezione dell'amore umano.",
         "modern_meaning": "Armonia totale nelle relazioni e in famiglia; hai trovato il tuo posto felice.",
+        "reversed_meaning": "Disarmonia familiare o valori in conflitto. Lavora per ristabilire la pace.",
         "reflection": "Come posso condividere la mia felicità con gli altri?"
     },
     {
@@ -850,6 +701,7 @@
         ],
         "waite_meaning": "Un giovane studioso e riflessivo.",
         "modern_meaning": "Sii aperto ai messaggi del cuore e alla tua intuizione creativa; una dolce sorpresa è in arrivo.",
+        "reversed_meaning": "Immaturità emotiva o blocco creativo. Non essere troppo permaloso.",
         "reflection": "Quale messaggio sta cercando di inviarmi il mio cuore?"
     },
     {
@@ -864,6 +716,7 @@
         ],
         "waite_meaning": "L'arrivo, l'approccio e il messaggero.",
         "modern_meaning": "Segui il tuo cuore e i tuoi ideali; un'offerta romantica o creativa potrebbe presentarsi.",
+        "reversed_meaning": "Umore instabile o inganno. Attento alle promesse troppo belle per essere vere.",
         "reflection": "Sto seguendo i miei sogni o solo la logica?"
     },
     {
@@ -878,6 +731,7 @@
         ],
         "waite_meaning": "La visione onirica e la poesia.",
         "modern_meaning": "Ascolta gli altri con empatia e fidati del tuo intuito; la tua sensibilità è la tua forza.",
+        "reversed_meaning": "Dipendenza emotiva o insicurezza. Proteggi i tuoi confini emotivi.",
         "reflection": "Come posso prendermi cura di me stesso e degli altri?"
     },
     {
@@ -892,6 +746,7 @@
         ],
         "waite_meaning": "L'uomo di affari, legge o divinità.",
         "modern_meaning": "Mantieni la calma e gestisci le emozioni con maturità; sii un porto sicuro per chi ti circonda.",
+        "reversed_meaning": "Manipolazione o freddezza. Non usare le emozioni per controllare gli altri.",
         "reflection": "Come posso gestire le mie emozioni con saggezza?"
     },
     {
@@ -906,6 +761,7 @@
         ],
         "waite_meaning": "Il trionfo della forza.",
         "modern_meaning": "Un momento di lucidità mentale; taglia via la confusione e vedi la verità per quella che è.",
+        "reversed_meaning": "Confusione o brutalità. La verità può ferire, ma non usarla come un'arma.",
         "reflection": "Quale verità devo accettare ora?"
     },
     {
@@ -920,6 +776,7 @@
         ],
         "waite_meaning": "La conformità e l'equilibrio del coraggio.",
         "modern_meaning": "Sei bloccato in una decisione difficile; togli la benda e affronta la scelta che stai evitando.",
+        "reversed_meaning": "Chiarezza o decisione presa. Smetti di esitare e agisci.",
         "reflection": "Cosa mi impedisce di prendere una decisione?"
     },
     {
@@ -934,6 +791,7 @@
         ],
         "waite_meaning": "La rimozione, l'assenza e il ritardo.",
         "modern_meaning": "Permettiti di sentire il dolore per poterlo rilasciare; la guarigione inizia dall'accettazione.",
+        "reversed_meaning": "Guarigione o rifiuto del dolore. Lascia andare il passato e perdona.",
         "reflection": "Quale ferita ha bisogno della mia attenzione?"
     },
     {
@@ -948,6 +806,7 @@
         ],
         "waite_meaning": "La vigilanza, la ritirata e la solitudine.",
         "modern_meaning": "Prenditi una pausa necessaria; la tua mente ha bisogno di silenzio per ricaricarsi.",
+        "reversed_meaning": "Esaurimento o risveglio. Non aspettare di crollare per riposarti.",
         "reflection": "Come posso concedermi il riposo di cui ho bisogno?"
     },
     {
@@ -962,6 +821,7 @@
         ],
         "waite_meaning": "La degradazione, la distruzione e l'infamia.",
         "modern_meaning": "Scegli le tue battaglie; a volte vincere a tutti i costi significa perdere qualcosa di più importante.",
+        "reversed_meaning": "Riconciliazione o rimorso. Chiedi scusa se hai ferito qualcuno.",
         "reflection": "Vale la pena vincere se perdo il rispetto degli altri?"
     },
     {
@@ -976,6 +836,7 @@
         ],
         "waite_meaning": "Il viaggio per acqua e il percorso.",
         "modern_meaning": "Ti stai muovendo verso acque più calme; lascia il passato turbolento alle spalle.",
+        "reversed_meaning": "Resistenza al cambiamento o bagaglio emotivo. Non portare i problemi con te nel nuovo viaggio.",
         "reflection": "Verso cosa mi sto dirigendo?"
     },
     {
@@ -990,6 +851,7 @@
         ],
         "waite_meaning": "Il disegno, il tentativo e il desiderio.",
         "modern_meaning": "Usa l'astuzia ma fai attenzione all'inganno; qualcuno (o tu stesso) potrebbe non essere del tutto onesto.",
+        "reversed_meaning": "Confessione o segreti svelati. La verità verrà a galla, meglio essere onesti.",
         "reflection": "Cosa sto cercando di nascondere o ottenere di nascosto?"
     },
     {
@@ -1004,6 +866,7 @@
         ],
         "waite_meaning": "La cattiva notizia e la crisi.",
         "modern_meaning": "Ti senti in trappola, ma le sbarre sono mentali; cambia prospettiva per trovare la via d'uscita.",
+        "reversed_meaning": "Liberazione o nuova prospettiva. Togli la benda e cammina verso la libertà.",
         "reflection": "Quali pensieri mi stanno limitando?"
     },
     {
@@ -1018,6 +881,7 @@
         ],
         "waite_meaning": "La morte, il fallimento e il ritardo.",
         "modern_meaning": "Le tue paure sono peggiori della realtà; respira e cerca di razionalizzare ciò che ti preoccupa.",
+        "reversed_meaning": "Speranza o fine dell'angoscia. L'alba sta arrivando, non disperare.",
         "reflection": "Cosa mi tiene sveglio la notte?"
     },
     {
@@ -1032,6 +896,7 @@
         ],
         "waite_meaning": "Il dolore, l'afflizione e la tristezza.",
         "modern_meaning": "Hai toccato il fondo, ma ora puoi solo risalire; accetta la fine per poter ricominciare.",
+        "reversed_meaning": "Guarigione lenta o rifiuto della fine. Il peggio è passato, ora ricostruisci.",
         "reflection": "Cosa deve finire definitivamente perché io possa rinascere?"
     },
     {
@@ -1046,6 +911,7 @@
         ],
         "waite_meaning": "L'autorità, la sorveglianza e la spia.",
         "modern_meaning": "Sii curioso e cerca la verità; comunica con chiarezza e aspettati notizie interessanti.",
+        "reversed_meaning": "Pettegolezzi o parole dure. Attento a come usi le parole.",
         "reflection": "Cosa ho bisogno di imparare o scoprire?"
     },
     {
@@ -1060,6 +926,7 @@
         ],
         "waite_meaning": "L'abilità, il coraggio e la difesa.",
         "modern_meaning": "Persegui i tuoi obiettivi con determinazione, ma non calpestare gli altri nella tua corsa.",
+        "reversed_meaning": "Aggressività o dispersione. Non agire senza pensare alle conseguenze.",
         "reflection": "Sto agendo troppo in fretta senza pensare?"
     },
     {
@@ -1074,6 +941,7 @@
         ],
         "waite_meaning": "La vedovanza, la tristezza e l'assenza.",
         "modern_meaning": "Usa la tua intelligenza e la tua onestà; taglia via ciò che non è essenziale con grazia.",
+        "reversed_meaning": "Freddezza o amarezza. Non chiudere il tuo cuore per proteggerti.",
         "reflection": "Come posso essere onesto senza essere crudele?"
     },
     {
@@ -1088,6 +956,7 @@
         ],
         "waite_meaning": "Il giudizio, il potere e il comando.",
         "modern_meaning": "Guida con la logica e la giustizia; la tua mente è il tuo strumento più potente.",
+        "reversed_meaning": "Manipolazione o crudeltà mentale. Usa il tuo potere per il bene.",
         "reflection": "Sto prendendo decisioni basate sui fatti o sulle emozioni?"
     },
     {
@@ -1102,6 +971,7 @@
         ],
         "waite_meaning": "La contentezza perfetta e la felicità.",
         "modern_meaning": "Una nuova opportunità materiale o finanziaria; pianta il seme per un futuro prospero.",
+        "reversed_meaning": "Opportunità persa o avidità. Non lasciare che il denaro sia il tuo unico obiettivo.",
         "reflection": "Quale opportunità concreta devo cogliere?"
     },
     {
@@ -1116,6 +986,7 @@
         ],
         "waite_meaning": "La gioia, la ricreazione e la notizia.",
         "modern_meaning": "Mantieni l'equilibrio tra le varie sfere della tua vita; sii flessibile di fronte ai cambiamenti.",
+        "reversed_meaning": "Squilibrio o disorganizzazione. Stai cercando di fare troppe cose insieme.",
         "reflection": "Cosa sto cercando di bilanciare con fatica?"
     },
     {
@@ -1130,6 +1001,7 @@
         ],
         "waite_meaning": "Il mestiere, il commercio e la nobiltà.",
         "modern_meaning": "Collabora con gli altri per creare qualcosa di duraturo; il tuo talento è riconosciuto.",
+        "reversed_meaning": "Mancanza di collaborazione o lavoro scadente. Impara a lavorare in team.",
         "reflection": "Come posso contribuire al meglio in un gruppo?"
     },
     {
@@ -1144,6 +1016,7 @@
         ],
         "waite_meaning": "La sicurezza del possesso e il dono.",
         "modern_meaning": "Non aggrapparti troppo ai beni materiali; la vera sicurezza viene dalla flessibilità, non dal controllo.",
+        "reversed_meaning": "Avarizia o perdita. Lascia fluire le risorse, non bloccarle.",
         "reflection": "Di cosa ho paura di perdere il controllo?"
     },
     {
@@ -1158,6 +1031,7 @@
         ],
         "waite_meaning": "Il disordine materiale e la povertà.",
         "modern_meaning": "Stai attraversando un momento difficile, ma non sei solo; chiedi aiuto e non isolarti.",
+        "reversed_meaning": "Ripresa o persistenza nella povertà. La crisi sta passando, abbi fede.",
         "reflection": "A chi posso chiedere aiuto in questo momento?"
     },
     {
@@ -1172,6 +1046,7 @@
         ],
         "waite_meaning": "Il presente, il dono e la gratificazione.",
         "modern_meaning": "Dai e ricevi con equilibrio; la generosità crea un flusso positivo nella tua vita.",
+        "reversed_meaning": "Egoismo o debiti. Non dare più di quanto puoi permetterti.",
         "reflection": "Sto dando troppo o troppo poco?"
     },
     {
@@ -1186,6 +1061,7 @@
         ],
         "waite_meaning": "Il denaro, gli affari e il baratto.",
         "modern_meaning": "Hai lavorato sodo, ora aspetta i frutti; valuta se sei sulla strada giusta.",
+        "reversed_meaning": "Impazienza o scarso rendimento. Forse è tempo di cambiare strategia.",
         "reflection": "I miei sforzi stanno portando i risultati sperati?"
     },
     {
@@ -1200,6 +1076,7 @@
         ],
         "waite_meaning": "Il lavoro, l'impiego e la commissione.",
         "modern_meaning": "Concentrati sui dettagli e affina le tue abilità; il duro lavoro porterà all'eccellenza.",
+        "reversed_meaning": "Perfezionismo o mancanza di ambizione. Non perderti nei dettagli inutili.",
         "reflection": "In quale abilità voglio diventare maestro?"
     },
     {
@@ -1214,6 +1091,7 @@
         ],
         "waite_meaning": "La prudenza, la sicurezza e il successo.",
         "modern_meaning": "Goditi i frutti del tuo lavoro in autonomia; sei arrivato a un punto di stabilità e benessere.",
+        "reversed_meaning": "Dipendenza finanziaria o superficialità. Ricorda che i soldi non sono tutto.",
         "reflection": "Come posso godermi di più i miei successi?"
     },
     {
@@ -1228,6 +1106,7 @@
         ],
         "waite_meaning": "Il guadagno, la ricchezza e la famiglia.",
         "modern_meaning": "Stabilità a lungo termine e benessere familiare; costruisci qualcosa che duri nel tempo.",
+        "reversed_meaning": "Problemi familiari o perdita finanziaria. Proteggi ciò che hai costruito.",
         "reflection": "Quale eredità voglio lasciare?"
     },
     {
@@ -1242,6 +1121,7 @@
         ],
         "waite_meaning": "L'applicazione, lo studio e la riflessione.",
         "modern_meaning": "Un'opportunità concreta di imparare o guadagnare; approccia tutto con mentalità pratica.",
+        "reversed_meaning": "Pigrizia o mancanza di focus. Impegnati di più per raggiungere i tuoi obiettivi.",
         "reflection": "Cosa sono pronto a imparare oggi?"
     },
     {
@@ -1256,6 +1136,7 @@
         ],
         "waite_meaning": "L'utilità, l'interesse e la responsabilità.",
         "modern_meaning": "Procedi con calma e costanza; l'affidabilità è la tua arma vincente.",
+        "reversed_meaning": "Noia o stallo. Non rimanere bloccato nella routine, osa un po' di più.",
         "reflection": "Sto procedendo con la giusta costanza verso i miei obiettivi?"
     },
     {
@@ -1270,6 +1151,7 @@
         ],
         "waite_meaning": "L'opulenza, la generosità e la magnificenza.",
         "modern_meaning": "Prenditi cura del tuo mondo materiale e del tuo corpo; coltiva l'abbondanza con amore.",
+        "reversed_meaning": "Materialismo o trascuratezza. Trova l'equilibrio tra lavoro e vita privata.",
         "reflection": "Come posso portare più comfort nella mia vita?"
     },
     {
@@ -1284,6 +1166,7 @@
         ],
         "waite_meaning": "Il valore, la realizzazione e l'intelligenza.",
         "modern_meaning": "Hai il tocco di Mida; gestisci le tue risorse con saggezza e goditi la prosperità.",
+        "reversed_meaning": "Avidità o corruzione. Usa il tuo potere con responsabilità.",
         "reflection": "Come sto gestendo le mie risorse e il mio potere?"
     }
 ]

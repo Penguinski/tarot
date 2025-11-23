@@ -14,6 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     <style>
         :root {
             --bg: #050505;
@@ -30,11 +32,10 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            /* Forza altezza schermo */
             overflow: hidden;
-            /* Blocca scroll generale */
             display: flex;
             flex-direction: column;
+            perspective: 1000px;
         }
 
         h1,
@@ -46,7 +47,6 @@
             letter-spacing: 2px;
         }
 
-        /* --- SCHERMATE --- */
         .screen {
             display: none;
             width: 100%;
@@ -63,7 +63,7 @@
             display: flex;
         }
 
-        /* --- INPUT E CATEGORIE --- */
+        /* --- STILI BASE --- */
         textarea {
             background: transparent;
             border: none;
@@ -95,7 +95,6 @@
             color: #666;
             padding: 20px 10px;
             border-radius: 4px;
-            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -104,7 +103,6 @@
             border-color: var(--gold);
             color: var(--gold);
             background: rgba(197, 160, 89, 0.05);
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.1);
         }
 
         .cta-btn {
@@ -112,19 +110,77 @@
             color: #000;
             border: none;
             padding: 15px 40px;
-            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-            transition: transform 0.2s;
         }
 
-        .cta-btn:active {
-            transform: scale(0.95);
+        /* --- EFFETTI 3D PARALLAX --- */
+        .card-visual {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 45vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            margin-bottom: 15px;
+            border: 1px solid #333;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
         }
 
+        /* --- BIBLIOTECA --- */
+        #screen-library {
+            align-items: flex-start;
+            padding: 0;
+        }
 
-        /* --- ANIMAZIONE MESCOLA (Nuova) --- */
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            padding: 10px;
+            width: 100%;
+            overflow-y: auto;
+            padding-bottom: 50px;
+        }
+
+        .lib-card-thumb {
+            width: 100%;
+            aspect-ratio: 2/3.5;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            border: 1px solid #333;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .lib-card-thumb:hover {
+            opacity: 1;
+            border-color: var(--gold);
+        }
+
+        #card-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 100;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
+        }
+
+        /* --- MESCOLA --- */
         .shuffle-container {
             position: relative;
             width: 80px;
@@ -141,22 +197,18 @@
             background: repeating-linear-gradient(45deg, #111, #111 5px, #1a1a1a 5px, #1a1a1a 10px);
             border: 1px solid var(--gold);
             border-radius: 6px;
-            box-shadow: 0 0 10px rgba(197, 160, 89, 0.2);
         }
 
-        /* La carta che va a sinistra */
         .sc-left {
             animation: shuffleMoveLeft 0.8s ease-in-out infinite;
             z-index: 2;
         }
 
-        /* La carta che va a destra */
         .sc-right {
             animation: shuffleMoveRight 0.8s ease-in-out infinite;
             z-index: 1;
         }
 
-        /* La carta centrale (ferma) */
         .sc-center {
             z-index: 3;
         }
@@ -189,13 +241,11 @@
             }
         }
 
-        /* --- TAVOLO DI LETTURA (LAYOUT FLEX RIGIDO) --- */
+        /* --- READING LAYOUT --- */
         #screen-reading {
             display: none;
-            /* Sovrascrive il display flex generico quando attivo */
             flex-direction: column;
             justify-content: space-between;
-            /* Distribuisce Top, Middle, Bottom */
             padding: 0;
             background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
             overflow: hidden;
@@ -205,70 +255,53 @@
             display: flex;
         }
 
-        /* 1. Header Fissa */
         .reading-header {
             flex: 0 0 auto;
-            /* Non si ridimensiona */
             padding: 20px 0 10px 0;
             width: 100%;
             text-align: center;
             z-index: 10;
         }
 
-        /* 2. Area Carte Flessibile */
         #carousel-container {
             flex: 1;
-            /* Occupa tutto lo spazio rimanente */
             width: 100%;
             display: flex;
             align-items: center;
-            /* Centra verticalmente le carte */
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
             padding-left: 50vw;
             padding-right: 50vw;
-            box-sizing: border-box;
             scrollbar-width: none;
         }
 
-        #carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* 3. Footer Fisso */
         .reading-footer {
             flex: 0 0 auto;
-            /* Non si ridimensiona */
             padding: 15px 0 30px 0;
             width: 100%;
             text-align: center;
             z-index: 20;
             background: linear-gradient(to top, #000 20%, transparent);
-            /* Sfumatura per leggibilità */
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
-        /* --- LA CARTA (SLIDE) --- */
         .slide {
             flex: 0 0 85vw;
-            /* Occupa l'85% della larghezza su mobile */
             max-width: 350px;
-            /* Limite su desktop */
             scroll-snap-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            /* Parte dall'alto del container */
             margin: 0 10px;
             opacity: 0.4;
             transform: scale(0.9);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: all 0.4s;
             position: relative;
             height: 100%;
-            /* Usa tutta l'altezza disponibile */
             max-height: 75vh;
-            /* Limite di sicurezza */
         }
 
         .slide-active {
@@ -276,27 +309,10 @@
             transform: scale(1);
         }
 
-        .card-visual {
-            width: auto;
-            max-width: 100%;
-            /* CHIAVE DEL PROBLEMA: L'altezza si adatta allo schermo */
-            height: auto;
-            max-height: 45vh;
-            /* Massimo il 45% dell'altezza schermo */
-            object-fit: contain;
-            border-radius: 6px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-            margin-bottom: 15px;
-            border: 1px solid #333;
-        }
-
-        /* Testo della carta */
         .meaning-content {
             text-align: center;
             width: 100%;
             overflow-y: auto;
-            /* Se il testo è lunghissimo, scrolla LUI, non la pagina */
-            /* Stilizzazione per leggibilità */
             padding: 0 5px;
         }
 
@@ -304,7 +320,6 @@
             color: var(--gold);
             margin: 0 0 5px 0;
             font-size: 1.4rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         .meaning-content p {
@@ -324,10 +339,8 @@
             padding-top: 10px;
         }
 
-        /* Dorso Mazzo */
         .card-back-pattern {
             width: 200px;
-            /* Più stretto per stare bene */
             height: 320px;
             background: repeating-linear-gradient(45deg, #111, #111 10px, #1a1a1a 10px, #1a1a1a 20px);
             border: 2px solid var(--gold-dim);
@@ -337,11 +350,26 @@
             font-size: 3rem;
             color: var(--gold-dim);
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             border-radius: 6px;
         }
 
-        /* Hint (Freccia) */
+        .action-btn {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--gold-dim);
+            color: var(--gold);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .share-btn {
+            border-color: #fff;
+            color: #fff;
+        }
+
         #scroll-hint {
             position: absolute;
             right: 10px;
@@ -353,7 +381,6 @@
             display: none;
             z-index: 50;
             pointer-events: none;
-            filter: drop-shadow(0 0 5px #000);
         }
 
         @keyframes pulseArrow {
@@ -373,19 +400,6 @@
             }
         }
 
-        .close-reading-btn {
-            background: rgba(0, 0, 0, 0.9);
-            border: 1px solid var(--gold-dim);
-            color: var(--gold);
-            padding: 12px 35px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0
@@ -395,6 +409,20 @@
                 opacity: 1
             }
         }
+
+        .reversed-img {
+            transform: rotate(180deg);
+            margin-bottom: 25px;
+        }
+
+        .rev-label {
+            color: #ff6b6b;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
@@ -402,23 +430,39 @@
 
     <div id="screen-home" class="screen active">
         <h1 style="border-bottom: 1px solid var(--gold); padding-bottom:10px;">Emerald Sun</h1>
-        <br><br>
+        <br>
         <button class="cat-btn" style="width:200px; margin-bottom:15px;" onclick="goToInput('one-card')">Carta
             Singola</button>
-        <button class="cat-btn" style="width:200px;" onclick="goToInput('three-cards')">Passato • Presente •
-            Futuro</button>
-        <button class="cat-btn" style="width:200px;" onclick="goToInput('celtic-cross')">La Croce Celtica (10
-            Carte)</button>
+        <button class="cat-btn" style="width:200px; margin-bottom:15px;" onclick="goToInput('three-cards')">Passato •
+            Presente • Futuro</button>
+        <button class="cat-btn" style="width:200px; margin-bottom:30px;" onclick="goToInput('celtic-cross')">La Croce
+            Celtica</button>
+
+        <button onclick="openLibrary()"
+            style="background:none; border:none; color:#666; font-size:0.8rem; border-bottom:1px solid #333; padding-bottom:2px; cursor:pointer">SFOGLIA
+            IL GRIMORIO</button>
+    </div>
+
+    <div id="screen-library" class="screen">
+        <div style="width:100%; padding:20px; display:flex; justify-content:space-between; align-items:center;">
+            <button onclick="goHome()"
+                style="background:none; border:none; color:var(--gold); font-size:1.5rem;">←</button>
+            <h2 style="margin:0; font-size:1rem;">Il Grimorio</h2>
+            <div style="width:30px;"></div>
+        </div>
+        <div id="library-grid" class="library-grid">
+        </div>
+    </div>
+
+    <div id="card-overlay" onclick="closeOverlay()">
     </div>
 
     <div id="screen-input" class="screen">
         <button onclick="goHome()"
             style="background:none; border:none; color:#444; position:absolute; top:20px; left:20px;">←
             INDIETRO</button>
-
         <h2 style="color:#666; font-size:0.9rem;">Il tuo intento</h2>
         <textarea id="user-question" rows="1" placeholder="Su cosa ti stai concentrando?"></textarea>
-
         <h2 style="color:#666; font-size:0.9rem; margin-top:20px;">Ambito</h2>
         <div class="category-grid">
             <button class="cat-btn selected" onclick="selectCategory(this, 'Generale')">Generale</button>
@@ -426,7 +470,10 @@
             <button class="cat-btn" onclick="selectCategory(this, 'Lavoro')">Lavoro</button>
             <button class="cat-btn" onclick="selectCategory(this, 'Spirito')">Spirito</button>
         </div>
-
+        <div style="margin-bottom:20px; color:#666; font-size:0.9rem; display:flex; align-items:center; gap:10px;">
+            <input type="checkbox" id="allow-reversed" style="width:auto; margin:0;">
+            <label for="allow-reversed" style="font-family:'Cormorant Garamond'">Includi carte rovesciate</label>
+        </div>
         <button class="cta-btn" onclick="startReading()">APRI IL MAZZO</button>
     </div>
 
@@ -440,23 +487,19 @@
     </div>
 
     <div id="screen-reading" class="screen">
-
         <div class="reading-header">
             <span id="reading-step"
                 style="font-family:'Cinzel'; color:#666; font-size:0.75rem; letter-spacing:3px;">PREPARAZIONE</span>
         </div>
-
         <div id="scroll-hint">→</div>
-
-        <div id="carousel-container">
-        </div>
-
+        <div id="carousel-container"></div>
         <div class="reading-footer">
-            <button onclick="goHome()" class="close-reading-btn">CHIUDI LETTURA</button>
+            <button onclick="takeScreenshot()" class="action-btn share-btn">SCATTA 📸</button>
+            <button onclick="goHome()" class="action-btn">CHIUDI</button>
         </div>
     </div>
 
-    <script src="app.js?v=9"></script>
+    <script src="app.js?v=12"></script>
 </body>
 
 </html>
